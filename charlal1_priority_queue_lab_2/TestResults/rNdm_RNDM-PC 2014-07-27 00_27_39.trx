@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="af8dbc21-b85c-4523-8677-f2ef406d404d" name="rNdm@RNDM-PC 2014-07-27 00:27:39" runUser="RNDM-PC\rNdm" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2006">
+  <TestRunConfiguration name="Local Test Run" id="837d47a3-7125-40da-ae2e-a4bba32ba44a">
+    <Description>This is a default test run configuration for a local test run.</Description>
+    <Deployment runDeploymentRoot="C:\Users\rNdm\Documents\Work\ADS\charlal1_priority_queue_lab_2\TestResults\rNdm_RNDM-PC 2014-07-27 00_27_39">
+      <DeploymentItem filename="c:\Users\rNdm\Documents\Work\ADS\charlal1_priority_queue_lab_2\charlal1_priority_queue_lab_2_tests\charlal1_priority_queue_lab_2_Accessor.exe" />
+      <DeploymentItem filename="c:\Users\rNdm\Documents\Work\ADS\charlal1_priority_queue_lab_2\Debug\charlal1_priority_queue_lab_2.exe" />
+    </Deployment>
+    <TestTypeSpecific />
+  </TestRunConfiguration>
+  <ResultSummary outcome="Completed">
+    <Counters total="1" executed="1" passed="1" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <Times creation="2014-07-27T00:27:39.4372694+12:00" queuing="2014-07-27T00:27:39.5643469+12:00" start="2014-07-27T00:27:39.5933507+12:00" finish="2014-07-27T00:27:39.6303544+12:00" />
+  <TestDefinitions>
+    <UnitTest name="PriorityTest" storage="c:\users\rndm\documents\work\ads\charlal1_priority_queue_lab_2\debug\charlal1_priority_queue_lab_2_tests.dll" id="b0fe0915-04e3-b576-cddc-2248d672a194">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <DeploymentItems>
+        <DeploymentItem filename="charlal1_priority_queue_lab_2.exe" />
+      </DeploymentItems>
+      <Execution id="506f48e1-965b-426f-b51c-af2c9ccb39d3" />
+      <TestMethod codeBase="C:\Users\rNdm\Documents\Work\ADS\charlal1_priority_queue_lab_2\Debug\charlal1_priority_queue_lab_2_tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="charlal1_priority_queue_lab_2_tests.PatientTest, charlal1_priority_queue_lab_2_tests" name="PriorityTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="b0fe0915-04e3-b576-cddc-2248d672a194" executionId="506f48e1-965b-426f-b51c-af2c9ccb39d3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="506f48e1-965b-426f-b51c-af2c9ccb39d3" testId="b0fe0915-04e3-b576-cddc-2248d672a194" testName="PriorityTest" computerName="RNDM-PC" duration="00:00:00.0173649" startTime="2014-07-27T00:27:39.5933507+12:00" endTime="2014-07-27T00:27:39.6273536+12:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

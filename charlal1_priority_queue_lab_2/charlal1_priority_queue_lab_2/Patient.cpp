@@ -1,8 +1,11 @@
 #include "StdAfx.h"
 #include "Patient.h"
 
-Patient::Patient(int priority, String^ name)
+namespace charlal1_priority_queue_lab_2 
 {
-	this->priority = priority;
-	this->name = name;
+	Patient::Patient(int priority, String^ name)
+	{
+		this->priority = priority;
+		this->name = name;
+	}
 }

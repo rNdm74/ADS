@@ -3,7 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "charlal1_priority_queue_lab_2", "charlal1_priority_queue_lab_2\charlal1_priority_queue_lab_2.vcproj", "{8036B52D-E611-4233-B442-1B73C4C05C9D}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "charlal1_priority_queue_lab_2_tests", "charlal1_priority_queue_lab_2_tests\charlal1_priority_queue_lab_2_tests.vcproj", "{3AA6D659-A552-42B3-9566-7BC69DFA471A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{06E490F3-D62C-44F0-822D-6B6D4D5FD9C0}"
+	ProjectSection(SolutionItems) = preProject
+		charlal1_priority_queue_lab_2.vsmdi = charlal1_priority_queue_lab_2.vsmdi
+		LocalTestRun.testrunconfig = LocalTestRun.testrunconfig
+	EndProjectSection
+EndProject
 Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = charlal1_priority_queue_lab_2.vsmdi
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
 		Release|Win32 = Release|Win32
@@ -13,6 +24,10 @@ Global
 		{8036B52D-E611-4233-B442-1B73C4C05C9D}.Debug|Win32.Build.0 = Debug|Win32
 		{8036B52D-E611-4233-B442-1B73C4C05C9D}.Release|Win32.ActiveCfg = Release|Win32
 		{8036B52D-E611-4233-B442-1B73C4C05C9D}.Release|Win32.Build.0 = Release|Win32
+		{3AA6D659-A552-42B3-9566-7BC69DFA471A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{3AA6D659-A552-42B3-9566-7BC69DFA471A}.Debug|Win32.Build.0 = Debug|Win32
+		{3AA6D659-A552-42B3-9566-7BC69DFA471A}.Release|Win32.ActiveCfg = Release|Win32
+		{3AA6D659-A552-42B3-9566-7BC69DFA471A}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,54 +1,58 @@
 #pragma once
 
-using namespace System;
-using namespace System::Collections;
-
-ref class Patient: public IComparable
+namespace charlal1_priority_queue_lab_2 
 {
-public:
-	Patient(int priority, String^ name);
+	using namespace System;
+	using namespace System::Collections;
 
-	virtual Int32 CompareTo( Object^ obj ) 
+	ref class Patient: public IComparable
 	{
-      if (obj == nullptr) return 1;
+		public:
+			Patient(int priority, String^ name);
+			virtual String^ ToString() override
+			{
+				return "Patient: " + name;
+			}
 
-	  if ( obj->GetType() == Patient::typeid ) {
-         Patient^ patient = dynamic_cast<Patient^>(obj);
+			virtual Int32 CompareTo( Object^ obj ) 
+			{
+				if (obj == nullptr) return 1;
 
-		 return this->Priority.CompareTo( patient->Priority );
-      }
+				if ( obj->GetType() == Patient::typeid ) 
+				{
+					Patient^ patient = dynamic_cast<Patient^>(obj);
+					return this->Priority.CompareTo(patient->Priority);
+				}
 
-      throw gcnew ArgumentException(  "object is not a Patient" );
-    }
+				throw gcnew ArgumentException("object is not a Patient");
+			}
 
-	property String^ Name
-	{
-		String^ get()
-		{
-			return name;
-		}
-		void set(String^ value)
-		{
-			name = value;
-		}
-	}
+			property String^ Name
+			{
+				String^ get()
+				{
+					return name;
+				}
+				void set(String^ value)
+				{
+					name = value;
+				}
+			}
 
-	property int Priority
-	{
-		int get()
-		{
-			return priority;
-		}
-		void set(int value)
-		{
-			priority = value;
-		}
-	}
+			property int Priority
+			{
+				int get()
+				{
+					return priority;
+				}
+				void set(int value)
+				{
+					priority = value;
+				}
+			}
 
-private:
-	int priority;
-	String^ name;
-
-
-
-};
+		private:
+			int priority;
+			String^ name;
+	};
+}

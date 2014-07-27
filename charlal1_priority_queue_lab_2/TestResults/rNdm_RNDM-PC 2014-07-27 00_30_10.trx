@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="6bdd8344-a550-40b1-914e-9596beaf7253" name="rNdm@RNDM-PC 2014-07-27 00:30:10" runUser="RNDM-PC\rNdm" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2006">
+  <TestRunConfiguration name="Local Test Run" id="837d47a3-7125-40da-ae2e-a4bba32ba44a">
+    <Description>This is a default test run configuration for a local test run.</Description>
+    <Deployment runDeploymentRoot="C:\Users\rNdm\Documents\Work\ADS\charlal1_priority_queue_lab_2\TestResults\rNdm_RNDM-PC 2014-07-27 00_30_10">
+      <DeploymentItem filename="c:\Users\rNdm\Documents\Work\ADS\charlal1_priority_queue_lab_2\charlal1_priority_queue_lab_2_tests\charlal1_priority_queue_lab_2_Accessor.exe" />
+      <DeploymentItem filename="c:\Users\rNdm\Documents\Work\ADS\charlal1_priority_queue_lab_2\Debug\charlal1_priority_queue_lab_2.exe" />
+    </Deployment>
+    <TestTypeSpecific />
+  </TestRunConfiguration>
+  <ResultSummary outcome="Failed">
+    <Counters total="11" executed="11" passed="10" error="0" failed="1" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <Times creation="2014-07-27T00:30:10.0921161+12:00" queuing="2014-07-27T00:30:10.2111187+12:00" start="2014-07-27T00:30:10.2411244+12:00" finish="2014-07-27T00:30:10.2911276+12:00" />
+  <TestDefinitions>
+    <UnitTest name="NameTest" storage="c:\users\rndm\documents\work\ads\charlal1_priority_queue_lab_2\debug\charlal1_priority_queue_lab_2_tests.dll" id="c00dcf41-4f95-8b69-a372-5f88a4696d7c">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <DeploymentItems>
+        <DeploymentItem filename="charlal1_priority_queue_lab_2.exe" />
+      </DeploymentItems>
+      <Execution id="e2a41956-ef4a-43f4-8e20-a92a405f9d74" />
+      <TestMethod codeBase="C:\Users\rNdm\Documents\Work\ADS\charlal1_priority_queue_lab_2\Debug\charlal1_priority_queue_lab_2_tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="charlal1_priority_queue_lab_2_tests.PatientTest, charlal1_priority_queue_lab_2_tests" name="NameTest" />
+    </UnitTest>
+    <UnitTest name="IsEmptyTest" storage="c:\users\rndm\documents\work\ads\charlal1_priority_queue_lab_2\debug\charlal1_priority_queue_lab_2_tests.dll" id="8caebf03-0e18-6adc-cd4e-31f8aa9222ac">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <DeploymentItems>
+        <DeploymentItem filename="charlal1_priority_queue_lab_2.exe" />
+      </DeploymentItems>
+      <Execution id="acb4e5da-7c55-4f73-82fd-2b5c3849179d" />
+      <TestMethod codeBase="C:\Users\rNdm\Documents\Work\ADS\charlal1_priority_queue_lab_2\Debug\charlal1_priority_queue_lab_2_tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="charlal1_priority_queue_lab_2_tests.PriorityQueueTest, charlal1_priority_queue_lab_2_tests" name="IsEmptyTest" />
+    </UnitTest>
+    <UnitTest name="ToStringTest" storage="c:\users\rndm\documents\work\ads\charlal1_priority_queue_lab_2\debug\charlal1_priority_queue_lab_2_tests.dll" id="ac18c3f4-c873-aa8f-1e25-8b180c893456">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <DeploymentItems>
+        <DeploymentItem filename="charlal1_priority_queue_lab_2.exe" />
+      </DeploymentItems>
+      <Execution id="04c7a035-b288-4fc7-8a65-5724548fd6e1" />
+      <TestMethod codeBase="C:\Users\rNdm\Documents\Work\ADS\charlal1_priority_queue_lab_2\Debug\charlal1_priority_queue_lab_2_tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="charlal1_priority_queue_lab_2_tests.PatientTest, charlal1_priority_queue_lab_2_tests" name="ToStringTest" />
+    </UnitTest>
+    <UnitTest name="PeekTest" storage="c:\users\rndm\documents\work\ads\charlal1_priority_queue_lab_2\debug\charlal1_priority_queue_lab_2_tests.dll" id="163d7fb1-47ab-ae09-2160-cab47298cf68">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <DeploymentItems>
+        <DeploymentItem filename="charlal1_priority_queue_lab_2.exe" />
+      </DeploymentItems>
+      <Execution id="21095f6f-4b28-46af-886c-386f627c3730" />
+      <TestMethod codeBase="C:\Users\rNdm\Documents\Work\ADS\charlal1_priority_queue_lab_2\Debug\charlal1_priority_queue_lab_2_tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="charlal1_priority_queue_lab_2_tests.PriorityQueueTest, charlal1_priority_queue_lab_2_tests" name="PeekTest" />
+    </UnitTest>
+    <UnitTest name="CompareToTest" storage="c:\users\rndm\documents\work\ads\charlal1_priority_queue_lab_2\debug\charlal1_priority_queue_lab_2_tests.dll" id="7a354bc7-2e5b-29ce-befe-b9d9b5148e4b">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <DeploymentItems>
+        <DeploymentItem filename="charlal1_priority_queue_lab_2.exe" />
+      </DeploymentItems>
+      <Execution id="eb10964b-2754-4702-a337-3ee738e5942c" />
+      <TestMethod codeBase="C:\Users\rNdm\Documents\Work\ADS\charlal1_priority_queue_lab_2\Debug\charlal1_priority_queue_lab_2_tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="charlal1_priority_queue_lab_2_tests.PatientTest, charlal1_priority_queue_lab_2_tests" name="CompareToTest" />
+    </UnitTest>
+    <UnitTest name="PopTest" storage="c:\users\rndm\documents\work\ads\charlal1_priority_queue_lab_2\debug\charlal1_priority_queue_lab_2_tests.dll" id="0fb6a225-5e8f-006a-d038-c6d347e4eef4">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <DeploymentItems>
+        <DeploymentItem filename="charlal1_priority_queue_lab_2.exe" />
+      </DeploymentItems>
+      <Execution id="2e44a43f-e9cc-4087-b3d4-ee082c312427" />
+      <TestMethod codeBase="C:\Users\rNdm\Documents\Work\ADS\charlal1_priority_queue_lab_2\Debug\charlal1_priority_queue_lab_2_tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="charlal1_priority_queue_lab_2_tests.PriorityQueueTest, charlal1_priority_queue_lab_2_tests" name="PopTest" />
+    </UnitTest>
+    <UnitTest name="PushTest" storage="c:\users\rndm\documents\work\ads\charlal1_priority_queue_lab_2\debug\charlal1_priority_queue_lab_2_tests.dll" id="e84cef97-ff09-08e9-fb45-953878b1ba38">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <DeploymentItems>
+        <DeploymentItem filename="charlal1_priority_queue_lab_2.exe" />
+      </DeploymentItems>
+      <Execution id="38cb4686-7014-4c03-a0d6-ebc5c09a4adc" />
+      <TestMethod codeBase="C:\Users\rNdm\Documents\Work\ADS\charlal1_priority_queue_lab_2\Debug\charlal1_priority_queue_lab_2_tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="charlal1_priority_queue_lab_2_tests.PriorityQueueTest, charlal1_priority_queue_lab_2_tests" name="PushTest" />
+    </UnitTest>
+    <UnitTest name="PriorityTest" storage="c:\users\rndm\documents\work\ads\charlal1_priority_queue_lab_2\debug\charlal1_priority_queue_lab_2_tests.dll" id="b0fe0915-04e3-b576-cddc-2248d672a194">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <DeploymentItems>
+        <DeploymentItem filename="charlal1_priority_queue_lab_2.exe" />
+      </DeploymentItems>
+      <Execution id="b98856a5-a23a-4a6b-86da-650062f60369" />
+      <TestMethod codeBase="C:\Users\rNdm\Documents\Work\ADS\charlal1_priority_queue_lab_2\Debug\charlal1_priority_queue_lab_2_tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="charlal1_priority_queue_lab_2_tests.PatientTest, charlal1_priority_queue_lab_2_tests" name="PriorityTest" />
+    </UnitTest>
+    <UnitTest name="PriorityQueueConstructorTest" storage="c:\users\rndm\documents\work\ads\charlal1_priority_queue_lab_2\debug\charlal1_priority_queue_lab_2_tests.dll" id="da0f682f-2f90-4141-678b-a4a00ccb9346">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <DeploymentItems>
+        <DeploymentItem filename="charlal1_priority_queue_lab_2.exe" />
+      </DeploymentItems>
+      <Execution id="f893c4ad-5ad3-4ec1-9c72-984a4ddbe647" />
+      <TestMethod codeBase="C:\Users\rNdm\Documents\Work\ADS\charlal1_priority_queue_lab_2\Debug\charlal1_priority_queue_lab_2_tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="charlal1_priority_queue_lab_2_tests.PriorityQueueTest, charlal1_priority_queue_lab_2_tests" name="PriorityQueueConstructorTest" />
+    </UnitTest>
+    <UnitTest name="CountTest" storage="c:\users\rndm\documents\work\ads\charlal1_priority_queue_lab_2\debug\charlal1_priority_queue_lab_2_tests.dll" id="08f4719e-1063-4ef4-c5cc-2eee0a588d47">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <DeploymentItems>
+        <DeploymentItem filename="charlal1_priority_queue_lab_2.exe" />
+      </DeploymentItems>
+      <Execution id="0bbbb361-bc54-489e-bbde-66a102d9101f" />
+      <TestMethod codeBase="C:\Users\rNdm\Documents\Work\ADS\charlal1_priority_queue_lab_2\Debug\charlal1_priority_queue_lab_2_tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="charlal1_priority_queue_lab_2_tests.PriorityQueueTest, charlal1_priority_queue_lab_2_tests" name="CountTest" />
+    </UnitTest>
+    <UnitTest name="PatientConstructorTest" storage="c:\users\rndm\documents\work\ads\charlal1_priority_queue_lab_2\debug\charlal1_priority_queue_lab_2_tests.dll" id="61dc2e78-c7a6-99da-dcb8-d0a3be46db58">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <DeploymentItems>
+        <DeploymentItem filename="charlal1_priority_queue_lab_2.exe" />
+      </DeploymentItems>
+      <Execution id="33bc9a2e-837b-44b4-be2f-21535188d9ea" />
+      <TestMethod codeBase="C:\Users\rNdm\Documents\Work\ADS\charlal1_priority_queue_lab_2\Debug\charlal1_priority_queue_lab_2_tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="charlal1_priority_queue_lab_2_tests.PatientTest, charlal1_priority_queue_lab_2_tests" name="PatientConstructorTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="08f4719e-1063-4ef4-c5cc-2eee0a588d47" executionId="0bbbb361-bc54-489e-bbde-66a102d9101f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0fb6a225-5e8f-006a-d038-c6d347e4eef4" executionId="2e44a43f-e9cc-4087-b3d4-ee082c312427" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="163d7fb1-47ab-ae09-2160-cab47298cf68" executionId="21095f6f-4b28-46af-886c-386f627c3730" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="61dc2e78-c7a6-99da-dcb8-d0a3be46db58" executionId="33bc9a2e-837b-44b4-be2f-21535188d9ea" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7a354bc7-2e5b-29ce-befe-b9d9b5148e4b" executionId="eb10964b-2754-4702-a337-3ee738e5942c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8caebf03-0e18-6adc-cd4e-31f8aa9222ac" executionId="acb4e5da-7c55-4f73-82fd-2b5c3849179d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ac18c3f4-c873-aa8f-1e25-8b180c893456" executionId="04c7a035-b288-4fc7-8a65-5724548fd6e1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b0fe0915-04e3-b576-cddc-2248d672a194" executionId="b98856a5-a23a-4a6b-86da-650062f60369" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c00dcf41-4f95-8b69-a372-5f88a4696d7c" executionId="e2a41956-ef4a-43f4-8e20-a92a405f9d74" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="da0f682f-2f90-4141-678b-a4a00ccb9346" executionId="f893c4ad-5ad3-4ec1-9c72-984a4ddbe647" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e84cef97-ff09-08e9-fb45-953878b1ba38" executionId="38cb4686-7014-4c03-a0d6-ebc5c09a4adc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="0bbbb361-bc54-489e-bbde-66a102d9101f" testId="08f4719e-1063-4ef4-c5cc-2eee0a588d47" testName="CountTest" computerName="RNDM-PC" duration="00:00:00.0172461" startTime="2014-07-27T00:30:10.2411244+12:00" endTime="2014-07-27T00:30:10.2731240+12:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="2e44a43f-e9cc-4087-b3d4-ee082c312427" testId="0fb6a225-5e8f-006a-d038-c6d347e4eef4" testName="PopTest" computerName="RNDM-PC" duration="00:00:00.0005890" startTime="2014-07-27T00:30:10.2741275+12:00" endTime="2014-07-27T00:30:10.2751265+12:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="21095f6f-4b28-46af-886c-386f627c3730" testId="163d7fb1-47ab-ae09-2160-cab47298cf68" testName="PeekTest" computerName="RNDM-PC" duration="00:00:00.0005244" startTime="2014-07-27T00:30:10.2751265+12:00" endTime="2014-07-27T00:30:10.2761252+12:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="33bc9a2e-837b-44b4-be2f-21535188d9ea" testId="61dc2e78-c7a6-99da-dcb8-d0a3be46db58" testName="PatientConstructorTest" computerName="RNDM-PC" duration="00:00:00.0005941" startTime="2014-07-27T00:30:10.2771222+12:00" endTime="2014-07-27T00:30:10.2781273+12:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="eb10964b-2754-4702-a337-3ee738e5942c" testId="7a354bc7-2e5b-29ce-befe-b9d9b5148e4b" testName="CompareToTest" computerName="RNDM-PC" duration="00:00:00.0006780" startTime="2014-07-27T00:30:10.2791225+12:00" endTime="2014-07-27T00:30:10.2801270+12:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="acb4e5da-7c55-4f73-82fd-2b5c3849179d" testId="8caebf03-0e18-6adc-cd4e-31f8aa9222ac" testName="IsEmptyTest" computerName="RNDM-PC" duration="00:00:00.0009093" startTime="2014-07-27T00:30:10.2801270+12:00" endTime="2014-07-27T00:30:10.2821271+12:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="04c7a035-b288-4fc7-8a65-5724548fd6e1" testId="ac18c3f4-c873-aa8f-1e25-8b180c893456" testName="ToStringTest" computerName="RNDM-PC" duration="00:00:00.0009882" startTime="2014-07-27T00:30:10.2821271+12:00" endTime="2014-07-27T00:30:10.2841269+12:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.AreEqual failed. Expected:&lt;Patient: Bob&gt;. Actual:&lt;charlal1_priority_queue_lab_2.Patient: Bob&gt;. </Message>
+          <StackTrace>   at charlal1_priority_queue_lab_2_tests.PatientTest.ToStringTest() in c:\users\rndm\documents\work\ads\charlal1_priority_queue_lab_2\charlal1_priority_queue_lab_2_tests\patienttest.cpp:line 103
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="b98856a5-a23a-4a6b-86da-650062f60369" testId="b0fe0915-04e3-b576-cddc-2248d672a194" testName="PriorityTest" computerName="RNDM-PC" duration="00:00:00.0004875" startTime="2014-07-27T00:30:10.2841269+12:00" endTime="2014-07-27T00:30:10.2851270+12:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="e2a41956-ef4a-43f4-8e20-a92a405f9d74" testId="c00dcf41-4f95-8b69-a372-5f88a4696d7c" testName="NameTest" computerName="RNDM-PC" duration="00:00:00.0005784" startTime="2014-07-27T00:30:10.2851270+12:00" endTime="2014-07-27T00:30:10.2861271+12:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="f893c4ad-5ad3-4ec1-9c72-984a4ddbe647" testId="da0f682f-2f90-4141-678b-a4a00ccb9346" testName="PriorityQueueConstructorTest" computerName="RNDM-PC" duration="00:00:00.0001564" startTime="2014-07-27T00:30:10.2871227+12:00" endTime="2014-07-27T00:30:10.2871227+12:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="38cb4686-7014-4c03-a0d6-ebc5c09a4adc" testId="e84cef97-ff09-08e9-fb45-953878b1ba38" testName="PushTest" computerName="RNDM-PC" duration="00:00:00.0002330" startTime="2014-07-27T00:30:10.2881267+12:00" endTime="2014-07-27T00:30:10.2891273+12:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>
