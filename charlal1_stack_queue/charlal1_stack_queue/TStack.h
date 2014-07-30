@@ -3,7 +3,6 @@
 #include "StdAfx.h"
 #include "Node.h"
 
-
 template<class T> 
 ref class TStack
 { 		
@@ -36,12 +35,12 @@ template<class T> void TStack<T>::Push(T item)
 	if(newNode == nullptr)
 		throw gcnew StackOverflowException("You are trying to push a null item"); 
 
-	if(tail == nullptr)			// Empty list
+	if(tail == nullptr) // Empty list
 	{
 		head = newNode;
 		tail = newNode;
 	}
-	else						// Adding to head
+	else // Adding to head
 	{
 		// Set head to item->Next
 		newNode->Next = head;

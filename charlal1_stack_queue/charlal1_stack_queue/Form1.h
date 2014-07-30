@@ -2,6 +2,7 @@
 
 #include "TStack.h"
 #include "TQueue.h"
+#include "TestHarness.h"
 
 
 namespace charlal1_stack_queue {

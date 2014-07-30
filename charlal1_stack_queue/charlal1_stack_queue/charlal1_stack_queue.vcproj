@@ -204,10 +204,6 @@
 				>
 			</File>
 			<File
-				RelativePath=".\Node.cpp"
-				>
-			</File>
-			<File
 				RelativePath=".\stdafx.cpp"
 				>
 				<FileConfiguration
@@ -226,14 +222,6 @@
 						UsePrecompiledHeader="1"
 					/>
 				</FileConfiguration>
-			</File>
-			<File
-				RelativePath=".\TQueue.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\TStack.cpp"
-				>
 			</File>
 		</Filter>
 		<Filter
@@ -261,6 +249,10 @@
 			</File>
 			<File
 				RelativePath=".\stdafx.h"
+				>
+			</File>
+			<File
+				RelativePath=".\TestHarness.h"
 				>
 			</File>
 			<File
