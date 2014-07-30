@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "charlal1_stack_queue", "charlal1_stack_queue\charlal1_stack_queue.vcproj", "{24DCBBFD-0951-47E1-8D1C-EBEC44C3277F}"
+EndProject
+Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = charlal1_priority_queue_lab_2.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{24DCBBFD-0951-47E1-8D1C-EBEC44C3277F}.Debug|Win32.ActiveCfg = Debug|Win32
+		{24DCBBFD-0951-47E1-8D1C-EBEC44C3277F}.Debug|Win32.Build.0 = Debug|Win32
+		{24DCBBFD-0951-47E1-8D1C-EBEC44C3277F}.Release|Win32.ActiveCfg = Release|Win32
+		{24DCBBFD-0951-47E1-8D1C-EBEC44C3277F}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
