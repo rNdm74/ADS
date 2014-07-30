@@ -1,21 +1,24 @@
 #pragma once
 
 #include "StdAfx.h"
+#include "Node.h"
+
 
 template<class T> 
 ref class TStack
-{    
+{ 		
+
 public: 
     TStack();
-    void Push(T^ item);
-    T^ Pop();
-	T^ Peek();
+    void Push(T item);
+    T Pop();
+	T Peek();
 	int Count();
 	bool IsEmpty();
 
 private:
-	T^ head;
-	T^ tail;	
+	Node<T>^ head;
+	Node<T>^ tail;	
 };
 
 template<class T> TStack<T>::TStack()
@@ -24,31 +27,29 @@ template<class T> TStack<T>::TStack()
 	tail = nullptr;
 };
 
-template<class T> void TStack<T>::Push(T^ item)
+template<class T> void TStack<T>::Push(T item)
 {
+	Node<T>^ newNode = gcnew Node<T>();
+	newNode->Data = item;
+
 	// Throws exception if item is null
-	if(item == nullptr)
+	if(newNode == nullptr)
 		throw gcnew StackOverflowException("You are trying to push a null item"); 
 
 	if(tail == nullptr)			// Empty list
 	{
-		head = item;
-		tail = item;
+		head = newNode;
+		tail = newNode;
 	}
-	else						// Adding to end
+	else						// Adding to head
 	{
-		// Set head to item
-		item->Next = head;
-
-		head = item;
-
-		// move current head to tail
-		//tail->Next = item;
-		//tail = item;
+		// Set head to item->Next
+		newNode->Next = head;
+		head = newNode;
 	}
 };
 
-template<class T> T^ TStack<T>::Pop()
+template<class T> T TStack<T>::Pop()
 {
 	if(head == nullptr)
 	{
@@ -58,16 +59,26 @@ template<class T> T^ TStack<T>::Pop()
 	else
 	{
 		// Copy head to temp item
-		T^ item = head;
+		Node<T>^ item = head;
 		
-		head = head->Next;
+		if(head == tail)
+		{
+			head = nullptr;
+			tail = nullptr;
+		}
+		else
+		{
+			head = head->Next;
+		}
+
+		item->Next = nullptr;
 
 		// Return saved head
-		return item;
+		return safe_cast<T>(item->Data);
 	}
 };
 
-template<class T> T^ TStack<T>::Peek()
+template<class T> T TStack<T>::Peek()
 {
 	if(head == nullptr)
 	{
@@ -76,13 +87,13 @@ template<class T> T^ TStack<T>::Peek()
 	}
 	else
 	{
-		return head;
+		return safe_cast<T>(head->Data);
 	}	
 };
 
 template<class T> int TStack<T>::Count()
 {
-	T^ walker = head;
+	Node<T>^ walker = head;
 
 	int count = 0;
 

@@ -1,7 +1,8 @@
 #pragma once
 
 #include "TStack.h"
-#include "Node.h"
+#include "TQueue.h"
+
 
 namespace charlal1_stack_queue {
 
@@ -31,22 +32,34 @@ namespace charlal1_stack_queue {
 			//TODO: Add the constructor code here
 			//
 			
-			TStack<Node>^ testStack = gcnew TStack<Node>();
+			TStack<char>^ stack = gcnew TStack<char>();
+			TQueue<int>^ queue = gcnew TQueue<int>();
 
-			Node^ node1 = gcnew Node();
-			node1->Data = 1;
-			Node^ node2 = gcnew Node();
-			node2->Data = 2;
-			Node^ node3 = gcnew Node();
-			node3->Data = 3;
+			stack->Push('a');
+			stack->Push('b');
+			stack->Push('c');
 
-			testStack->Push(node1);
-			testStack->Push(node2);
-			testStack->Push(node3);
+			char charTest1 = stack->Pop();
+			char charTest2 = stack->Pop();
+			char charTest3 = stack->Pop();
+			
+			queue->Push(1);
+			queue->Push(2);
+			queue->Push(3);
 
-			Node^ data = testStack->Pop();
+			int intTest1 = queue->Pop();
+			int intTest2 = queue->Pop();
+			int intTest3 = queue->Pop();
 
-						
+			//stack->Peek();
+			//queue->Peek();
+
+			for(int i = 0; i < 10000; i++)
+				queue->Push(i);
+
+			for(int i = 0; i < 10000; i++)
+				lbDisplay->Items->Add(queue->Pop());
+
 		}
 
 	protected:
@@ -60,6 +73,8 @@ namespace charlal1_stack_queue {
 				delete components;
 			}
 		}
+	private: System::Windows::Forms::ListBox^  lbDisplay;
+	protected: 
 
 	private:
 		/// <summary>
@@ -74,11 +89,33 @@ namespace charlal1_stack_queue {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->components = gcnew System::ComponentModel::Container();
-			this->Size = System::Drawing::Size(300,300);
-			this->Text = L"Form1";
-			this->Padding = System::Windows::Forms::Padding(0);
+			this->lbDisplay = (gcnew System::Windows::Forms::ListBox());
+			this->SuspendLayout();
+			// 
+			// lbDisplay
+			// 
+			this->lbDisplay->BackColor = System::Drawing::SystemColors::Control;
+			this->lbDisplay->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->lbDisplay->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->lbDisplay->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->lbDisplay->FormattingEnabled = true;
+			this->lbDisplay->ItemHeight = 20;
+			this->lbDisplay->Location = System::Drawing::Point(0, 0);
+			this->lbDisplay->Name = L"lbDisplay";
+			this->lbDisplay->Size = System::Drawing::Size(284, 260);
+			this->lbDisplay->TabIndex = 0;
+			// 
+			// Form1
+			// 
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->ClientSize = System::Drawing::Size(284, 261);
+			this->Controls->Add(this->lbDisplay);
+			this->Name = L"Form1";
+			this->Text = L"Form1";
+			this->ResumeLayout(false);
+
 		}
 #pragma endregion
 	};
