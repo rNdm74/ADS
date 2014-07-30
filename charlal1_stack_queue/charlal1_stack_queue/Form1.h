@@ -31,8 +31,22 @@ namespace charlal1_stack_queue {
 			//TODO: Add the constructor code here
 			//
 			
-			TStack<Node, 10>^ testStack = gcnew TStack<Node, 10>();
-			
+			TStack<Node>^ testStack = gcnew TStack<Node>();
+
+			Node^ node1 = gcnew Node();
+			node1->Data = 1;
+			Node^ node2 = gcnew Node();
+			node2->Data = 2;
+			Node^ node3 = gcnew Node();
+			node3->Data = 3;
+
+			testStack->Push(node1);
+			testStack->Push(node2);
+			testStack->Push(node3);
+
+			Node^ data = testStack->Pop();
+
+						
 		}
 
 	protected:
