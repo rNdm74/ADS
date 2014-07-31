@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="ff56b43c-2ab6-48e2-af85-58b382f98e05" name="rNdm@RNDM-PC 2014-07-31 17:40:31" runUser="RNDM-PC\rNdm" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2006">
+  <TestRunConfiguration name="Local Test Run" id="40aa7b33-5a90-4002-88c6-e356e58f2b73">
+    <Description>This is a default test run configuration for a local test run.</Description>
+    <Deployment runDeploymentRoot="C:\Users\rNdm\Documents\Work\ADS\charlal1_stack_queue\TestResults\rNdm_RNDM-PC 2014-07-31 17_40_31" />
+    <TestTypeSpecific />
+  </TestRunConfiguration>
+  <ResultSummary outcome="Failed">
+    <Counters total="1" executed="1" error="0" failed="1" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <Times creation="2014-07-31T17:40:31.2051058+12:00" queuing="2014-07-31T17:40:31.2901093+12:00" start="2014-07-31T17:40:31.2941146+12:00" finish="2014-07-31T17:40:31.3151147+12:00" />
+  <TestDefinitions>
+    <UnitTest name="TestPopInt" storage="c:\users\rndm\documents\work\ads\charlal1_stack_queue\debug\charlal1_stack_queue_tests.dll" id="2dcafd1a-ff65-48e2-075f-b3303e1d4d5c">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="a25c0c41-4991-4d6c-a57b-e91ed296cf3e" />
+      <TestMethod codeBase="C:\Users\rNdm\Documents\Work\ADS\charlal1_stack_queue\Debug\charlal1_stack_queue_tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="charlal1_stack_queue_tests.charlal1_stack_queue_tests, charlal1_stack_queue_tests" name="TestPopInt" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="2dcafd1a-ff65-48e2-075f-b3303e1d4d5c" executionId="a25c0c41-4991-4d6c-a57b-e91ed296cf3e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="a25c0c41-4991-4d6c-a57b-e91ed296cf3e" testId="2dcafd1a-ff65-48e2-075f-b3303e1d4d5c" testName="TestPopInt" computerName="RNDM-PC" duration="00:00:00.0024774" startTime="2014-07-31T17:40:31.2951144+12:00" endTime="2014-07-31T17:40:31.3131157+12:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.AreEqual failed. Expected:&lt;True (System.Boolean)&gt;. Actual:&lt;1 (System.Int32)&gt;. </Message>
+          <StackTrace>   at charlal1_stack_queue_tests.charlal1_stack_queue_tests.TestPopInt() in c:\users\rndm\documents\work\ads\charlal1_stack_queue\charlal1_stack_queue_tests\charlal1_stack_queue_tests.cpp:line 104
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="88ce3698-482e-4ffe-ac85-30dc7f2707ec" name="rNdm@RNDM-PC 2014-07-31 17:42:30" runUser="RNDM-PC\rNdm" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2006">
+  <TestRunConfiguration name="Local Test Run" id="40aa7b33-5a90-4002-88c6-e356e58f2b73">
+    <Description>This is a default test run configuration for a local test run.</Description>
+    <Deployment runDeploymentRoot="C:\Users\rNdm\Documents\Work\ADS\charlal1_stack_queue\TestResults\rNdm_RNDM-PC 2014-07-31 17_42_30" />
+    <TestTypeSpecific />
+  </TestRunConfiguration>
+  <ResultSummary outcome="Completed">
+    <Counters total="6" executed="6" passed="6" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <Times creation="2014-07-31T17:42:30.6764210+12:00" queuing="2014-07-31T17:42:30.7774324+12:00" start="2014-07-31T17:42:30.7834285+12:00" finish="2014-07-31T17:42:30.8104350+12:00" />
+  <TestDefinitions>
+    <UnitTest name="TestPushChar" storage="c:\users\rndm\documents\work\ads\charlal1_stack_queue\debug\charlal1_stack_queue_tests.dll" id="73a2d7e4-79e2-9df1-b2b9-d29b68bfc94d">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="8b471279-5b35-4591-8fcb-36f897692597" />
+      <TestMethod codeBase="C:\Users\rNdm\Documents\Work\ADS\charlal1_stack_queue\Debug\charlal1_stack_queue_tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="charlal1_stack_queue_tests.charlal1_stack_queue_tests, charlal1_stack_queue_tests" name="TestPushChar" />
+    </UnitTest>
+    <UnitTest name="TestPopChar" storage="c:\users\rndm\documents\work\ads\charlal1_stack_queue\debug\charlal1_stack_queue_tests.dll" id="18a026e3-bf33-a0ce-2908-3e3207099e1f">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="a97fbad1-53ef-4741-824b-829612de95bb" />
+      <TestMethod codeBase="C:\Users\rNdm\Documents\Work\ADS\charlal1_stack_queue\Debug\charlal1_stack_queue_tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="charlal1_stack_queue_tests.charlal1_stack_queue_tests, charlal1_stack_queue_tests" name="TestPopChar" />
+    </UnitTest>
+    <UnitTest name="TestPeekInt" storage="c:\users\rndm\documents\work\ads\charlal1_stack_queue\debug\charlal1_stack_queue_tests.dll" id="896ecce8-1a1b-117f-2b97-202ca471a898">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="df6a3d7c-25c0-437f-b245-f40f4bc5d65c" />
+      <TestMethod codeBase="C:\Users\rNdm\Documents\Work\ADS\charlal1_stack_queue\Debug\charlal1_stack_queue_tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="charlal1_stack_queue_tests.charlal1_stack_queue_tests, charlal1_stack_queue_tests" name="TestPeekInt" />
+    </UnitTest>
+    <UnitTest name="TestPopInt" storage="c:\users\rndm\documents\work\ads\charlal1_stack_queue\debug\charlal1_stack_queue_tests.dll" id="2dcafd1a-ff65-48e2-075f-b3303e1d4d5c">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="55b33322-1c97-4a58-b720-250cfe732041" />
+      <TestMethod codeBase="C:\Users\rNdm\Documents\Work\ADS\charlal1_stack_queue\Debug\charlal1_stack_queue_tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="charlal1_stack_queue_tests.charlal1_stack_queue_tests, charlal1_stack_queue_tests" name="TestPopInt" />
+    </UnitTest>
+    <UnitTest name="TestPushInt" storage="c:\users\rndm\documents\work\ads\charlal1_stack_queue\debug\charlal1_stack_queue_tests.dll" id="58be1d8d-2a83-88b5-a750-ffb624ed73da">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="42a6c4d4-713b-42e6-8db9-816e9cf63094" />
+      <TestMethod codeBase="C:\Users\rNdm\Documents\Work\ADS\charlal1_stack_queue\Debug\charlal1_stack_queue_tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="charlal1_stack_queue_tests.charlal1_stack_queue_tests, charlal1_stack_queue_tests" name="TestPushInt" />
+    </UnitTest>
+    <UnitTest name="TestPeekChar" storage="c:\users\rndm\documents\work\ads\charlal1_stack_queue\debug\charlal1_stack_queue_tests.dll" id="5175cacb-7d6e-b4fb-ceb0-ab0ec9144512">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="daf06326-6dc4-4e6c-9e04-4c1ec6ebceab" />
+      <TestMethod codeBase="C:\Users\rNdm\Documents\Work\ADS\charlal1_stack_queue\Debug\charlal1_stack_queue_tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="charlal1_stack_queue_tests.charlal1_stack_queue_tests, charlal1_stack_queue_tests" name="TestPeekChar" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="18a026e3-bf33-a0ce-2908-3e3207099e1f" executionId="a97fbad1-53ef-4741-824b-829612de95bb" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2dcafd1a-ff65-48e2-075f-b3303e1d4d5c" executionId="55b33322-1c97-4a58-b720-250cfe732041" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5175cacb-7d6e-b4fb-ceb0-ab0ec9144512" executionId="daf06326-6dc4-4e6c-9e04-4c1ec6ebceab" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="58be1d8d-2a83-88b5-a750-ffb624ed73da" executionId="42a6c4d4-713b-42e6-8db9-816e9cf63094" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="73a2d7e4-79e2-9df1-b2b9-d29b68bfc94d" executionId="8b471279-5b35-4591-8fcb-36f897692597" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="896ecce8-1a1b-117f-2b97-202ca471a898" executionId="df6a3d7c-25c0-437f-b245-f40f4bc5d65c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="a97fbad1-53ef-4741-824b-829612de95bb" testId="18a026e3-bf33-a0ce-2908-3e3207099e1f" testName="TestPopChar" computerName="RNDM-PC" duration="00:00:00.0013794" startTime="2014-07-31T17:42:30.7834285+12:00" endTime="2014-07-31T17:42:30.8024344+12:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="55b33322-1c97-4a58-b720-250cfe732041" testId="2dcafd1a-ff65-48e2-075f-b3303e1d4d5c" testName="TestPopInt" computerName="RNDM-PC" duration="00:00:00.0006015" startTime="2014-07-31T17:42:30.8024344+12:00" endTime="2014-07-31T17:42:30.8034295+12:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="daf06326-6dc4-4e6c-9e04-4c1ec6ebceab" testId="5175cacb-7d6e-b4fb-ceb0-ab0ec9144512" testName="TestPeekChar" computerName="RNDM-PC" duration="00:00:00.0002328" startTime="2014-07-31T17:42:30.8034295+12:00" endTime="2014-07-31T17:42:30.8044345+12:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="42a6c4d4-713b-42e6-8db9-816e9cf63094" testId="58be1d8d-2a83-88b5-a750-ffb624ed73da" testName="TestPushInt" computerName="RNDM-PC" duration="00:00:00.0002328" startTime="2014-07-31T17:42:30.8054297+12:00" endTime="2014-07-31T17:42:30.8064346+12:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="8b471279-5b35-4591-8fcb-36f897692597" testId="73a2d7e4-79e2-9df1-b2b9-d29b68bfc94d" testName="TestPushChar" computerName="RNDM-PC" duration="00:00:00.0001683" startTime="2014-07-31T17:42:30.8064346+12:00" endTime="2014-07-31T17:42:30.8074348+12:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="df6a3d7c-25c0-437f-b245-f40f4bc5d65c" testId="896ecce8-1a1b-117f-2b97-202ca471a898" testName="TestPeekInt" computerName="RNDM-PC" duration="00:00:00.0001435" startTime="2014-07-31T17:42:30.8074348+12:00" endTime="2014-07-31T17:42:30.8084350+12:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

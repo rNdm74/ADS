@@ -3,8 +3,6 @@
 #include "TStack.h"
 #include "TQueue.h"
 
-#include "charlal1_stack_queue_tests.h"
-
 
 namespace charlal1_stack_queue {
 
@@ -33,17 +31,20 @@ namespace charlal1_stack_queue {
 			//
 			//TODO: Add the constructor code here
 			//
+
 			
 			TStack<char>^ stack = gcnew TStack<char>();
 			TQueue<int>^ queue = gcnew TQueue<int>();
+
+			
 
 			stack->Push('a');
 			stack->Push('b');
 			stack->Push('c');
 
-			char charTest1 = stack->Pop();
-			char charTest2 = stack->Pop();
-			char charTest3 = stack->Pop();
+			//char charTest1 = stack->Pop();
+			//char charTest2 = stack->Pop();
+			//char charTest3 = stack->Pop();
 			
 			queue->Push(1);
 			queue->Push(2);
@@ -56,11 +57,11 @@ namespace charlal1_stack_queue {
 			//stack->Peek();
 			//queue->Peek();
 
-			for(int i = 0; i < 10000; i++)
-				queue->Push(i);
+			//for(int i = 0; i < 10000; i++)
+			//	queue->Push(i);
 
-			for(int i = 0; i < 10000; i++)
-				lbDisplay->Items->Add(queue->Pop());
+			//for(int i = 0; i < 10001; i++)
+			lbDisplay->Items->Add(stack->ToString());
 
 		}
 
