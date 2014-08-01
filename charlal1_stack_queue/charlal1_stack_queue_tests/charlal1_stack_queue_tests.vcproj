@@ -43,7 +43,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="C:\Users\rNdm\Documents\Work\ADS\charlal1_stack_queue\charlal1_stack_queue"
+				AdditionalIncludeDirectories="V:\ADS\charlal1_stack_queue\charlal1_stack_queue;C:\Users\rNdm\Documents\Work\ADS\charlal1_stack_queue\charlal1_stack_queue"
 				PreprocessorDefinitions="WIN32;_DEBUG"
 				RuntimeLibrary="3"
 				UsePrecompiledHeader="2"

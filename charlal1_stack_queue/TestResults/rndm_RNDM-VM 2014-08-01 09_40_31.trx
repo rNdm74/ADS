@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="fef74e6f-18bb-4e1c-aff5-05fdaf52e536" name="rndm@RNDM-VM 2014-08-01 09:40:31" runUser="RNDM-VM\rndm" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2006">
+  <TestRunConfiguration name="Local Test Run" id="40aa7b33-5a90-4002-88c6-e356e58f2b73">
+    <Description>This is a default test run configuration for a local test run.</Description>
+    <Deployment runDeploymentRoot="V:\ADS\charlal1_stack_queue\TestResults\rndm_RNDM-VM 2014-08-01 09_40_31" />
+    <TestTypeSpecific />
+  </TestRunConfiguration>
+  <ResultSummary outcome="Error">
+    <Counters total="14" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="14" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+    <RunInfos>
+      <RunInfo computerName="RNDM-VM" outcome="Error" timestamp="2014-08-01T09:40:32.0874782+12:00">
+        <Text>Failed to queue test run 'rndm@RNDM-VM 2014-08-01 09:40:31': Test Run deployment issue: The location of the file or directory 'v:\ads\charlal1_stack_queue\debug\charlal1_stack_queue_tests.dll' is not trusted.</Text>
+        <Exception>Microsoft.VisualStudio.TestTools.TestManagement.ExecutionException: Test Run deployment issue: The location of the file or directory 'v:\ads\charlal1_stack_queue\debug\charlal1_stack_queue_tests.dll' is not trusted.
+   at Microsoft.VisualStudio.TestTools.TestManagement.DeploymentManager.DoDeployment(TestRun run, FileCopyService fileCopyService)
+   at Microsoft.VisualStudio.TestTools.TestManagement.ControllerProxy.SetupTestRun(TestRun run, Boolean isNewTestRun, FileCopyService&amp; fileCopyService)
+   at Microsoft.VisualStudio.TestTools.TestManagement.ControllerProxy.QueueTestRunWorker(Object state)</Exception>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+  <Times creation="2014-08-01T09:40:31.5403968+12:00" queuing="2014-08-01T09:40:31.5403968+12:00" start="2014-08-01T09:40:31.5403968+12:00" finish="2014-08-01T09:40:32.0874782+12:00" />
+  <TestDefinitions>
+    <UnitTest name="TestPushChar" storage="v:\ads\charlal1_stack_queue\debug\charlal1_stack_queue_tests.dll" id="73a2d7e4-79e2-9df1-b2b9-d29b68bfc94d">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <TestMethod codeBase="v:\ADS\charlal1_stack_queue\Debug\charlal1_stack_queue_tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="charlal1_stack_queue_tests.charlal1_stack_queue_tests, charlal1_stack_queue_tests" name="TestPushChar" />
+    </UnitTest>
+    <UnitTest name="TestIsEmptyChar" storage="v:\ads\charlal1_stack_queue\debug\charlal1_stack_queue_tests.dll" id="28231a6d-bd50-80ff-4cd0-545f89e3b7f7">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <TestMethod codeBase="v:\ADS\charlal1_stack_queue\Debug\charlal1_stack_queue_tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="charlal1_stack_queue_tests.charlal1_stack_queue_tests, charlal1_stack_queue_tests" name="TestIsEmptyChar" />
+    </UnitTest>
+    <UnitTest name="TestIsEmptyInt" storage="v:\ads\charlal1_stack_queue\debug\charlal1_stack_queue_tests.dll" id="11d01656-8e59-8b73-af77-de97973b15b7">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <TestMethod codeBase="v:\ADS\charlal1_stack_queue\Debug\charlal1_stack_queue_tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="charlal1_stack_queue_tests.charlal1_stack_queue_tests, charlal1_stack_queue_tests" name="TestIsEmptyInt" />
+    </UnitTest>
+    <UnitTest name="TestPeekChar" storage="v:\ads\charlal1_stack_queue\debug\charlal1_stack_queue_tests.dll" id="5175cacb-7d6e-b4fb-ceb0-ab0ec9144512">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <TestMethod codeBase="v:\ADS\charlal1_stack_queue\Debug\charlal1_stack_queue_tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="charlal1_stack_queue_tests.charlal1_stack_queue_tests, charlal1_stack_queue_tests" name="TestPeekChar" />
+    </UnitTest>
+    <UnitTest name="TestPopEmptyQueue" storage="v:\ads\charlal1_stack_queue\debug\charlal1_stack_queue_tests.dll" id="64a138f5-10ca-e41d-bd03-de51f4c672a8">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <TestMethod codeBase="v:\ADS\charlal1_stack_queue\Debug\charlal1_stack_queue_tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="charlal1_stack_queue_tests.charlal1_stack_queue_tests, charlal1_stack_queue_tests" name="TestPopEmptyQueue" />
+    </UnitTest>
+    <UnitTest name="TestCountChar" storage="v:\ads\charlal1_stack_queue\debug\charlal1_stack_queue_tests.dll" id="df445820-7665-d38d-2964-6a4f57a9e0ee">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <TestMethod codeBase="v:\ADS\charlal1_stack_queue\Debug\charlal1_stack_queue_tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="charlal1_stack_queue_tests.charlal1_stack_queue_tests, charlal1_stack_queue_tests" name="TestCountChar" />
+    </UnitTest>
+    <UnitTest name="TestPeekEmptyStack" storage="v:\ads\charlal1_stack_queue\debug\charlal1_stack_queue_tests.dll" id="7626aa0b-cdf7-5eb5-2d7b-a6d0db790b30">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <TestMethod codeBase="v:\ADS\charlal1_stack_queue\Debug\charlal1_stack_queue_tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="charlal1_stack_queue_tests.charlal1_stack_queue_tests, charlal1_stack_queue_tests" name="TestPeekEmptyStack" />
+    </UnitTest>
+    <UnitTest name="TestPopChar" storage="v:\ads\charlal1_stack_queue\debug\charlal1_stack_queue_tests.dll" id="18a026e3-bf33-a0ce-2908-3e3207099e1f">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <TestMethod codeBase="v:\ADS\charlal1_stack_queue\Debug\charlal1_stack_queue_tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="charlal1_stack_queue_tests.charlal1_stack_queue_tests, charlal1_stack_queue_tests" name="TestPopChar" />
+    </UnitTest>
+    <UnitTest name="TestPeekEmptyQueue" storage="v:\ads\charlal1_stack_queue\debug\charlal1_stack_queue_tests.dll" id="9906b38d-d305-56a6-6e10-87218cbd04ea">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <TestMethod codeBase="v:\ADS\charlal1_stack_queue\Debug\charlal1_stack_queue_tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="charlal1_stack_queue_tests.charlal1_stack_queue_tests, charlal1_stack_queue_tests" name="TestPeekEmptyQueue" />
+    </UnitTest>
+    <UnitTest name="TestPushInt" storage="v:\ads\charlal1_stack_queue\debug\charlal1_stack_queue_tests.dll" id="58be1d8d-2a83-88b5-a750-ffb624ed73da">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <TestMethod codeBase="v:\ADS\charlal1_stack_queue\Debug\charlal1_stack_queue_tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="charlal1_stack_queue_tests.charlal1_stack_queue_tests, charlal1_stack_queue_tests" name="TestPushInt" />
+    </UnitTest>
+    <UnitTest name="TestCountInt" storage="v:\ads\charlal1_stack_queue\debug\charlal1_stack_queue_tests.dll" id="8599b3a5-2107-d57b-5c74-0248aeda468a">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <TestMethod codeBase="v:\ADS\charlal1_stack_queue\Debug\charlal1_stack_queue_tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="charlal1_stack_queue_tests.charlal1_stack_queue_tests, charlal1_stack_queue_tests" name="TestCountInt" />
+    </UnitTest>
+    <UnitTest name="TestPopEmptyStack" storage="v:\ads\charlal1_stack_queue\debug\charlal1_stack_queue_tests.dll" id="0ff663e1-49f9-db67-9ad6-55b58d961dc0">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <TestMethod codeBase="v:\ADS\charlal1_stack_queue\Debug\charlal1_stack_queue_tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="charlal1_stack_queue_tests.charlal1_stack_queue_tests, charlal1_stack_queue_tests" name="TestPopEmptyStack" />
+    </UnitTest>
+    <UnitTest name="TestPeekInt" storage="v:\ads\charlal1_stack_queue\debug\charlal1_stack_queue_tests.dll" id="896ecce8-1a1b-117f-2b97-202ca471a898">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <TestMethod codeBase="v:\ADS\charlal1_stack_queue\Debug\charlal1_stack_queue_tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="charlal1_stack_queue_tests.charlal1_stack_queue_tests, charlal1_stack_queue_tests" name="TestPeekInt" />
+    </UnitTest>
+    <UnitTest name="TestPopInt" storage="v:\ads\charlal1_stack_queue\debug\charlal1_stack_queue_tests.dll" id="2dcafd1a-ff65-48e2-075f-b3303e1d4d5c">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <TestMethod codeBase="v:\ADS\charlal1_stack_queue\Debug\charlal1_stack_queue_tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="charlal1_stack_queue_tests.charlal1_stack_queue_tests, charlal1_stack_queue_tests" name="TestPopInt" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="0ff663e1-49f9-db67-9ad6-55b58d961dc0" executionId="3cd4da4b-801b-4876-a03a-d7b107f3002a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="11d01656-8e59-8b73-af77-de97973b15b7" executionId="07a4a56c-9dec-42a1-8f11-d6c3d7ea3c3d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="18a026e3-bf33-a0ce-2908-3e3207099e1f" executionId="09fc1a33-6a9a-4473-8226-71f7cb83a9f1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="28231a6d-bd50-80ff-4cd0-545f89e3b7f7" executionId="884d57e4-33ad-4010-96be-6c60915d3a47" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2dcafd1a-ff65-48e2-075f-b3303e1d4d5c" executionId="2df98133-f9ec-4830-853a-334ff6daf708" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5175cacb-7d6e-b4fb-ceb0-ab0ec9144512" executionId="fbdbc6a2-9f4a-4633-9cb1-c7ccdabecba9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="58be1d8d-2a83-88b5-a750-ffb624ed73da" executionId="78eee39d-1cca-464d-b651-8d11f396b8ec" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="64a138f5-10ca-e41d-bd03-de51f4c672a8" executionId="f14e124c-11b7-411c-922c-36a4c5d3c374" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="73a2d7e4-79e2-9df1-b2b9-d29b68bfc94d" executionId="823a7c0f-1652-4326-9593-d62ec1ede258" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7626aa0b-cdf7-5eb5-2d7b-a6d0db790b30" executionId="a186c6d3-c317-464d-8d12-54230796cc04" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8599b3a5-2107-d57b-5c74-0248aeda468a" executionId="37fd085f-b024-4ab1-b774-b51e28147d9a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="896ecce8-1a1b-117f-2b97-202ca471a898" executionId="7be83573-5496-431f-8708-738f6c258ab8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9906b38d-d305-56a6-6e10-87218cbd04ea" executionId="720b1298-fb44-43ff-ac92-b85fd07d071d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="df445820-7665-d38d-2964-6a4f57a9e0ee" executionId="d3959817-d5bd-467f-a4d5-fdc806a83820" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="3cd4da4b-801b-4876-a03a-d7b107f3002a" testId="0ff663e1-49f9-db67-9ad6-55b58d961dc0" testName="TestPopEmptyStack" computerName="RNDM-VM" duration="00:00:00" startTime="0001-01-01T13:00:00.0000000+13:00" endTime="0001-01-01T13:00:00.0000000+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </UnitTestResult>
+    <UnitTestResult executionId="07a4a56c-9dec-42a1-8f11-d6c3d7ea3c3d" testId="11d01656-8e59-8b73-af77-de97973b15b7" testName="TestIsEmptyInt" computerName="RNDM-VM" duration="00:00:00" startTime="0001-01-01T13:00:00.0000000+13:00" endTime="0001-01-01T13:00:00.0000000+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </UnitTestResult>
+    <UnitTestResult executionId="09fc1a33-6a9a-4473-8226-71f7cb83a9f1" testId="18a026e3-bf33-a0ce-2908-3e3207099e1f" testName="TestPopChar" computerName="RNDM-VM" duration="00:00:00" startTime="0001-01-01T13:00:00.0000000+13:00" endTime="0001-01-01T13:00:00.0000000+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </UnitTestResult>
+    <UnitTestResult executionId="884d57e4-33ad-4010-96be-6c60915d3a47" testId="28231a6d-bd50-80ff-4cd0-545f89e3b7f7" testName="TestIsEmptyChar" computerName="RNDM-VM" duration="00:00:00" startTime="0001-01-01T13:00:00.0000000+13:00" endTime="0001-01-01T13:00:00.0000000+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </UnitTestResult>
+    <UnitTestResult executionId="2df98133-f9ec-4830-853a-334ff6daf708" testId="2dcafd1a-ff65-48e2-075f-b3303e1d4d5c" testName="TestPopInt" computerName="RNDM-VM" duration="00:00:00" startTime="0001-01-01T13:00:00.0000000+13:00" endTime="0001-01-01T13:00:00.0000000+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </UnitTestResult>
+    <UnitTestResult executionId="fbdbc6a2-9f4a-4633-9cb1-c7ccdabecba9" testId="5175cacb-7d6e-b4fb-ceb0-ab0ec9144512" testName="TestPeekChar" computerName="RNDM-VM" duration="00:00:00" startTime="0001-01-01T13:00:00.0000000+13:00" endTime="0001-01-01T13:00:00.0000000+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </UnitTestResult>
+    <UnitTestResult executionId="78eee39d-1cca-464d-b651-8d11f396b8ec" testId="58be1d8d-2a83-88b5-a750-ffb624ed73da" testName="TestPushInt" computerName="RNDM-VM" duration="00:00:00" startTime="0001-01-01T13:00:00.0000000+13:00" endTime="0001-01-01T13:00:00.0000000+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </UnitTestResult>
+    <UnitTestResult executionId="f14e124c-11b7-411c-922c-36a4c5d3c374" testId="64a138f5-10ca-e41d-bd03-de51f4c672a8" testName="TestPopEmptyQueue" computerName="RNDM-VM" duration="00:00:00" startTime="0001-01-01T13:00:00.0000000+13:00" endTime="0001-01-01T13:00:00.0000000+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </UnitTestResult>
+    <UnitTestResult executionId="823a7c0f-1652-4326-9593-d62ec1ede258" testId="73a2d7e4-79e2-9df1-b2b9-d29b68bfc94d" testName="TestPushChar" computerName="RNDM-VM" duration="00:00:00" startTime="0001-01-01T13:00:00.0000000+13:00" endTime="0001-01-01T13:00:00.0000000+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </UnitTestResult>
+    <UnitTestResult executionId="a186c6d3-c317-464d-8d12-54230796cc04" testId="7626aa0b-cdf7-5eb5-2d7b-a6d0db790b30" testName="TestPeekEmptyStack" computerName="RNDM-VM" duration="00:00:00" startTime="0001-01-01T13:00:00.0000000+13:00" endTime="0001-01-01T13:00:00.0000000+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </UnitTestResult>
+    <UnitTestResult executionId="37fd085f-b024-4ab1-b774-b51e28147d9a" testId="8599b3a5-2107-d57b-5c74-0248aeda468a" testName="TestCountInt" computerName="RNDM-VM" duration="00:00:00" startTime="0001-01-01T13:00:00.0000000+13:00" endTime="0001-01-01T13:00:00.0000000+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </UnitTestResult>
+    <UnitTestResult executionId="7be83573-5496-431f-8708-738f6c258ab8" testId="896ecce8-1a1b-117f-2b97-202ca471a898" testName="TestPeekInt" computerName="RNDM-VM" duration="00:00:00" startTime="0001-01-01T13:00:00.0000000+13:00" endTime="0001-01-01T13:00:00.0000000+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </UnitTestResult>
+    <UnitTestResult executionId="720b1298-fb44-43ff-ac92-b85fd07d071d" testId="9906b38d-d305-56a6-6e10-87218cbd04ea" testName="TestPeekEmptyQueue" computerName="RNDM-VM" duration="00:00:00" startTime="0001-01-01T13:00:00.0000000+13:00" endTime="0001-01-01T13:00:00.0000000+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </UnitTestResult>
+    <UnitTestResult executionId="d3959817-d5bd-467f-a4d5-fdc806a83820" testId="df445820-7665-d38d-2964-6a4f57a9e0ee" testName="TestCountChar" computerName="RNDM-VM" duration="00:00:00" startTime="0001-01-01T13:00:00.0000000+13:00" endTime="0001-01-01T13:00:00.0000000+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </UnitTestResult>
+  </Results>
+</TestRun>

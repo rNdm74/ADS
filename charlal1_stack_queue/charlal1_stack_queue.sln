@@ -8,12 +8,13 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D8B6386B-783C-4F08-8C31-07ED7A7A3A95}"
 	ProjectSection(SolutionItems) = preProject
 		charlal1_stack_queue.vsmdi = charlal1_stack_queue.vsmdi
+		charlal1_stack_queue1.vsmdi = charlal1_stack_queue1.vsmdi
 		LocalTestRun.testrunconfig = LocalTestRun.testrunconfig
 	EndProjectSection
 EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
-		CategoryFile = charlal1_stack_queue.vsmdi
+		CategoryFile = charlal1_stack_queue1.vsmdi
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
