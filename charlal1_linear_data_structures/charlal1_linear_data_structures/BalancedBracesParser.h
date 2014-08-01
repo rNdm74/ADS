@@ -1,15 +1,14 @@
 #pragma once
 
-#include "TStack.h"
+#include "LinkedListStack.h"
 
 using namespace System;
+using namespace System::Runtime::InteropServices;
 
 ref class BalancedBracesParser
 {
 public:
 	BalancedBracesParser();
 	bool IsBalanced(String^ s);
-
-private: 
-	TStack<char>^ stack;
+	bool Parse(String^ line);
 };

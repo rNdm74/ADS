@@ -10,13 +10,13 @@ int main(array<System::String ^> ^args)
 {
 	BalancedBracesParser^ bbp = gcnew BalancedBracesParser();
 
-	String^ line = "";
+	String^ line = nullptr;
 
 	while(line != "q")
 	{	
-		Console::Write("Enter express to parse or q to quit:");
-		String^ line = Console::ReadLine();
-		Console::WriteLine("Result: " + bbp->IsBalanced(line));
+		Console::Write("Enter expression to parse or q to quit:");
+		line = Console::ReadLine();
+		Console::WriteLine("Result: " + bbp->Parse(line));
 	}
 	
 	return 0;

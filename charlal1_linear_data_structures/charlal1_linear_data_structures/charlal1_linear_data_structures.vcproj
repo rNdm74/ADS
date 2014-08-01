@@ -224,6 +224,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\LinkedListStack.h"
+				>
+			</File>
+			<File
 				RelativePath=".\Node.h"
 				>
 			</File>
@@ -237,10 +241,6 @@
 			</File>
 			<File
 				RelativePath=".\TQueue.h"
-				>
-			</File>
-			<File
-				RelativePath=".\TStack.h"
 				>
 			</File>
 		</Filter>
