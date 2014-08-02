@@ -194,6 +194,14 @@
 				>
 			</File>
 			<File
+				RelativePath=".\PalindromeParser.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\PostfixParser.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\stdafx.cpp"
 				>
 				<FileConfiguration
@@ -224,6 +232,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\LinkedListQueue.h"
+				>
+			</File>
+			<File
 				RelativePath=".\LinkedListStack.h"
 				>
 			</File>
@@ -232,15 +244,19 @@
 				>
 			</File>
 			<File
+				RelativePath=".\PalindromeParser.h"
+				>
+			</File>
+			<File
+				RelativePath=".\PostfixParser.h"
+				>
+			</File>
+			<File
 				RelativePath=".\resource.h"
 				>
 			</File>
 			<File
 				RelativePath=".\stdafx.h"
-				>
-			</File>
-			<File
-				RelativePath=".\TQueue.h"
 				>
 			</File>
 		</Filter>

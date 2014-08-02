@@ -6,65 +6,31 @@ BalancedBracesParser::BalancedBracesParser()
 	
 }
 
-bool BalancedBracesParser::IsBalanced(String^ s)
+bool BalancedBracesParser::Parse( String^ s )
 {
-	// Test if the string has "{}"
-	if(s->Contains("{") == false || s->Contains("}") == false)
-		return false;
+	// Get all braces from string
+	array<wchar_t>^ braces = ParseBraces(s);
 
-	LinkedListStack<char>^ stack = gcnew LinkedListStack<char>();
-
-	// Assume string has balanced braces
-	bool isBalanced = true;
+	// Throw error if no braces in string
+	if( braces->Length <= 0 )
+		throw gcnew Exception( "No braces found" );
 	
-	// Loop through each char in s
-	for(int c = 0; c < s->Length; c++)
-	{
-		// Push opening braces to stack
-		if(s[c] == '{')
-		{
-			stack->Push(s[c]);
-		}
-		else if(s[c] == '}') // On closing brace found
-		{
-			// If we can pop stack matching brace found
-			// Else set the isBalanced flag to false
-			if(stack->IsEmpty() == false)
-				stack->Pop();
-			else
-				isBalanced = false;
-		}
-	}
-
-	// if stack->Count() is greater than 1
-	// once finished looping and there is still braces in the stack 
-	// there is a uneven number set isBalanced flag to false	
-	if(stack->Count() > 0)
-		isBalanced = false;
-
-	return isBalanced;
-}
-
-bool BalancedBracesParser::Parse(String^ line)
-{
 	// Create stack for parse
 	LinkedListStack<char>^ stack = gcnew LinkedListStack<char>();
 
-	// Copy contents of managed String into native heap  
-	char *expression = (char*)(void*)Marshal::StringToHGlobalAnsi(line);	
-
-	// Pop output
+	// Loop variables
 	char result;
+	int iterator;
 
 	// There is a char to test
-	while(*expression)
+	while( iterator < braces->Length )
 	{
 		// Test for open/closed braces
-		switch(*expression)
+		switch( braces[iterator] )
 		{
 			// Look for opening braces add to stack
 			case '[': case '{': case '(': 
-				stack->Push( *expression );
+				stack->Push( braces[iterator] );
 			break;
 
 			// Test for closing braces on all cases " ] } ) "
@@ -100,15 +66,40 @@ bool BalancedBracesParser::Parse(String^ line)
 					return false;
 			break;
 
-			// Ignore all other characters
 			default:
-				break;
+				return false;
 		}
 
 		// Move to next char
-		expression++;
+		iterator++;
 	}	
 	
 	// Return true if reach here with empty stack
 	return stack->IsEmpty();
+}
+
+array<wchar_t>^ BalancedBracesParser::ParseBraces( String^ s )
+{
+	// Specify the matches 
+	String^ matches = "{}[]()";
+
+	// Holder for mathes found
+	String^ result = "";
+
+	// Get the enumerator of the incoming string
+	IEnumerator^ myEnum = s->GetEnumerator();
+    	
+	// Loop through each char
+	while ( myEnum->MoveNext() )
+    {
+		// Get the char
+       Char^ entry = safe_cast<Char^>( myEnum->Current );
+
+	   // If it is a match add to the result string
+	   if( matches->Contains( Convert::ToString( entry ) ) )
+		   result += entry;
+    }		
+
+	// Return char array
+	return result->ToCharArray();
 }

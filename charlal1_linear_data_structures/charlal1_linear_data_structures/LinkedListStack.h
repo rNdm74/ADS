@@ -12,7 +12,7 @@ ref class LinkedListStack
 
 public: 
     LinkedListStack();
-    void Push(T item);
+    void Push( T item );
     T Pop();
 	T Peek();
 	int Count();
@@ -45,7 +45,7 @@ template<class T> LinkedListStack<T>::LinkedListStack()
 ///					2. stack has nodes, the head is added to the newNode->Next pointer,
 ///					   the newNode is assigned to the head
 /// </summary>
-template<class T> void LinkedListStack<T>::Push(T item)
+template<class T> void LinkedListStack<T>::Push( T item )
 {
 	// Create node to hold data 
 	// We do not care what data is added
@@ -53,7 +53,7 @@ template<class T> void LinkedListStack<T>::Push(T item)
 	newNode->Data = item;	
 
 	// Empty list
-	if(tail == nullptr) 
+	if( tail == nullptr ) 
 	{
 		// Only one node in stack
 		head = newNode;
@@ -79,10 +79,10 @@ template<class T> void LinkedListStack<T>::Push(T item)
 /// </summary>
 template<class T> T LinkedListStack<T>::Pop()
 {
-	if(head == nullptr)
+	if( head == nullptr )
 	{
 		// Throw exeption if stack empty
-		throw gcnew InvalidOperationException("Cannot pop an empty stack");
+		throw gcnew InvalidOperationException( "Cannot pop an empty stack" );
 	}
 	else
 	{
@@ -106,7 +106,7 @@ template<class T> T LinkedListStack<T>::Pop()
 		item->Next = nullptr;
 
 		// Return saved head data
-		return safe_cast<T>(item->Data);
+		return safe_cast<T>( item->Data );
 	}
 };
 
@@ -121,14 +121,14 @@ template<class T> T LinkedListStack<T>::Pop()
 /// </summary>
 template<class T> T LinkedListStack<T>::Peek()
 {
-	if(head == nullptr)
+	if( head == nullptr )
 	{
 		// Throw exeption if stack empty
 		throw gcnew InvalidOperationException("Cannot peek an empty stack");
 	}
 	else
 	{
-		return safe_cast<T>(head->Data);
+		return safe_cast<T>( head->Data );
 	}	
 };
 
@@ -147,7 +147,7 @@ template<class T> int LinkedListStack<T>::Count()
 	int count = 0;
 
 	// While not at the end node
-	while(walker != nullptr)
+	while( walker != nullptr )
 	{
 		// Increment count and then
 		count++;
@@ -180,7 +180,7 @@ template<class T> void LinkedListStack<T>::Dump()
 	
 	if( IsEmpty() )
 	{
-		Trace::WriteLine("-empty-");
+		Trace::WriteLine( "-empty-" );
 	}	
 	else 
 	{		
@@ -188,9 +188,9 @@ template<class T> void LinkedListStack<T>::Dump()
 		Node<T>^ walker = head;
 		
 		// While not at the end node
-		while(walker != nullptr)
+		while( walker != nullptr )
 		{
-			Trace::Write(walker->Data + " ");
+			Trace::Write( walker->Data + " " );
 			// Move to next node
 			walker = walker->Next;			
 		}

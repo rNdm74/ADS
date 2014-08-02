@@ -3,12 +3,13 @@
 #include "LinkedListStack.h"
 
 using namespace System;
-using namespace System::Runtime::InteropServices;
+using namespace System::Collections;
 
 ref class BalancedBracesParser
 {
 public:
 	BalancedBracesParser();
-	bool IsBalanced(String^ s);
-	bool Parse(String^ line);
+	bool Parse( String^ s );
+private:
+	array<wchar_t>^ ParseBraces( String^ s );
 };
