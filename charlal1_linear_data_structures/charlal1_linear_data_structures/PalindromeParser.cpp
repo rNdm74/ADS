@@ -11,12 +11,12 @@ bool PalindromeParser::Parse( String^ s )
 	array<wchar_t>^ expression = s->ToCharArray();
 
 	// Create stack for parse
-	LinkedListStack<char>^ stack = gcnew LinkedListStack<char>();
+	LinkedListStack<wchar_t>^ stack = gcnew LinkedListStack<wchar_t>();
 	// Create queue for parse
-	LinkedListQueue<char>^ queue = gcnew LinkedListQueue<char>();
+	LinkedListQueue<wchar_t>^ queue = gcnew LinkedListQueue<wchar_t>();
 
 	// Loop variables
-	int iterator;
+	int iterator = 0;
 
 	// There is a char to test
 	while( iterator < expression->Length )

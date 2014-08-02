@@ -16,11 +16,11 @@ bool BalancedBracesParser::Parse( String^ s )
 		throw gcnew Exception( "No braces found" );
 	
 	// Create stack for parse
-	LinkedListStack<char>^ stack = gcnew LinkedListStack<char>();
+	LinkedListStack<wchar_t>^ stack = gcnew LinkedListStack<wchar_t>();
 
 	// Loop variables
-	char result;
-	int iterator;
+	wchar_t result = '\0';
+	int iterator = 0;
 
 	// There is a char to test
 	while( iterator < braces->Length )

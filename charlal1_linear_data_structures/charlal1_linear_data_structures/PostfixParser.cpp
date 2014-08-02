@@ -14,9 +14,9 @@ int PostfixParser::Parse( String^ s )
 	LinkedListStack<int>^ stack = gcnew LinkedListStack<int>();
 
 	// Loop variables
-	int first;
-	int second;
-	int iterator;
+	int first = 0;
+	int second = 0;
+	int iterator = 0;
 
 	// There is a char to test
 	while( iterator < expression->Length )
