@@ -4,6 +4,7 @@
 
 using namespace System;
 using namespace System::Collections;
+using namespace System::Collections::Generic;
 
 ref class BalancedBracesParser
 {

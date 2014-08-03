@@ -115,12 +115,6 @@ array<wchar_t>^ BalancedBracesParser::ParseBraces( String^ s )
 	// Specify the matches 
 	String^ matches = "{}[]()";
 
-	array<wchar_t>^ mChars = gcnew array<wchar_t>
-	{
-		'{', '}', '[', ']', '(', ')'
-	};
-
-	
 	// Holder for mathes found
 	String^ result = "";
 
@@ -130,16 +124,15 @@ array<wchar_t>^ BalancedBracesParser::ParseBraces( String^ s )
 	int iterator = 0;
     	
 	// Loop through each char
-	while ( expression[iterator] )
+	while ( iterator < expression->Length )
     {
-		// Get the char
-       wchar_t entry = expression[iterator];
+		String^ item = Convert::ToString( expression[iterator] );
+	   
+		// If it is a match add to the result string
+	    if( matches->Contains( item ) )
+			result += item;
 
-	   // If it is a match add to the result string
-	   if( mChars-> )
-		   result += entry;
-
-	   iterator++;
+	    iterator++;
     }		
 
 	// Return char array
