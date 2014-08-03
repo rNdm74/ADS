@@ -1,11 +1,32 @@
 #include "StdAfx.h"
 #include "BalancedBracesParser.h"
 
+/// <summary>
+/// Summary for Constructor
+///	
+/// PRE-CONDITION:	No change
+/// POST-CONDITION: No change 
+/// </summary>
 BalancedBracesParser::BalancedBracesParser()
 {
 	
 }
 
+/// <summary>
+/// Summary for Parse
+///	
+/// PRE-CONDITION:	Must provide a String^ pointer
+/// POST-CONDITION: No global variables are changed, private function is used to pull braces from input String^ s
+///					Private function:
+///					ParseBraces()				- Returns array<wchar_t>
+///					Local variables created:
+///					array<wchar_t>				- Char array from input String^ s
+///					LinkedListStack<wchar_t>^	- Stack to hold chars FIFO
+///					wchar_t						- Hold result of pop
+///					int							- Track iteration over array<wchar_t>
+///					Result:
+///					Boolean returned if braces balance
+/// </summary>
 bool BalancedBracesParser::Parse( String^ s )
 {
 	// Get all braces from string
@@ -78,26 +99,47 @@ bool BalancedBracesParser::Parse( String^ s )
 	return stack->IsEmpty();
 }
 
+/// <summary>
+/// Summary for ParseBraces
+///	
+/// PRE-CONDITION:	Must provide a String^ pointer, expect array<wchar_t> returned
+/// POST-CONDITION: No global variables are changed,
+///					Local variables created:
+///					Two String^s				- One hold brace matches, Two hold found braces	
+///					IEnumerator^				- Enumerator for looping over String^
+///					Result:
+///					array<wchar_t>^ of braces from the input string
+/// </summary>
 array<wchar_t>^ BalancedBracesParser::ParseBraces( String^ s )
 {
 	// Specify the matches 
 	String^ matches = "{}[]()";
 
+	array<wchar_t>^ mChars = gcnew array<wchar_t>
+	{
+		'{', '}', '[', ']', '(', ')'
+	};
+
+	
 	// Holder for mathes found
 	String^ result = "";
 
 	// Get the enumerator of the incoming string
-	IEnumerator^ myEnum = s->GetEnumerator();
+	array<wchar_t>^ expression = s->ToCharArray();
+
+	int iterator = 0;
     	
 	// Loop through each char
-	while ( myEnum->MoveNext() )
+	while ( expression[iterator] )
     {
 		// Get the char
-       Char^ entry = safe_cast<Char^>( myEnum->Current );
+       wchar_t entry = expression[iterator];
 
 	   // If it is a match add to the result string
-	   if( matches->Contains( Convert::ToString( entry ) ) )
+	   if( mChars-> )
 		   result += entry;
+
+	   iterator++;
     }		
 
 	// Return char array

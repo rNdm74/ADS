@@ -9,9 +9,9 @@ using namespace System;
 
 int main(array<System::String ^> ^args)
 {
-	//BalancedBracesParser^ p = gcnew BalancedBracesParser();
+	BalancedBracesParser^ p = gcnew BalancedBracesParser();
 	//PostfixParser^ p = gcnew PostfixParser();
-	PalindromeParser^ p = gcnew PalindromeParser();
+	//PalindromeParser^ p = gcnew PalindromeParser();
 	
 	String^ line = nullptr;
 

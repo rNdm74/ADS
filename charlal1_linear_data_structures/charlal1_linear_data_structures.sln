@@ -8,12 +8,13 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9656A206-59F2-4122-AB79-BCFDB71C3D88}"
 	ProjectSection(SolutionItems) = preProject
 		charlal1_linear_data_structures.vsmdi = charlal1_linear_data_structures.vsmdi
+		charlal1_linear_data_structures1.vsmdi = charlal1_linear_data_structures1.vsmdi
 		LocalTestRun.testrunconfig = LocalTestRun.testrunconfig
 	EndProjectSection
 EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
-		CategoryFile = charlal1_linear_data_structures.vsmdi
+		CategoryFile = charlal1_linear_data_structures1.vsmdi
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32

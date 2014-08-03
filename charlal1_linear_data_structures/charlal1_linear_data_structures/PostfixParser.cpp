@@ -1,13 +1,31 @@
 #include "StdAfx.h"
 #include "PostfixParser.h"
 
+/// <summary>
+/// Summary for Constructor
+///	
+/// PRE-CONDITION:	No change
+/// POST-CONDITION: No change 
+/// </summary>
 PostfixParser::PostfixParser()
 {
 }
 
+/// <summary>
+/// Summary for Parse
+///	
+/// PRE-CONDITION:	Must provide a String^ pointer
+/// POST-CONDITION: No global variables are changed, 
+///					Local variables created:
+///					array<wchar_t>			- Char array from input String^ s
+///					LinkedListStack<int>^	- Stack to hold integers and totals
+///					3x int					- Two for data when poped from stack, and one to track iteration over array<wchar_t>
+///					Result:
+///					Return result, always last entry in stack
+/// </summary>
 int PostfixParser::Parse( String^ s )
 {
-	// Get all braces from string
+	// Get array<wchar_t> for parse
 	array<wchar_t>^ expression = s->ToCharArray();
 
 	// Create stack for parse
@@ -24,6 +42,8 @@ int PostfixParser::Parse( String^ s )
 		switch( expression[iterator] )
 		{
 			// Look for opening braces add to stack
+			// When operator chars "+-*/" found pop twice to get integers 
+			// Push result back to stack
 			case '+':
 				first = stack->Pop();
 				second = stack->Pop();
@@ -48,10 +68,13 @@ int PostfixParser::Parse( String^ s )
 				stack->Push(second / first);
 			break;
 
+			// If no operators found must be integer for processing
 			default:
+				// Test for valid number else throw exception
 				if( expression[iterator] >= '0' && expression[iterator] <= '9' )
 				{
-					stack->Push( expression[iterator] - 48 );
+					// Push number to stack
+					stack->Push( expression[iterator] - 48 ); // Subract char code '0' to convert char to int
 				}
 				else
 				{
@@ -60,8 +83,10 @@ int PostfixParser::Parse( String^ s )
 			break;
 		}
 
+		// Move to next char
 		iterator++;
 	}
 	
+	// Return result
 	return stack->Pop();
 }
