@@ -3,6 +3,8 @@
 ref class InsertionSort
 {
 public:
+	int o;
+public:
 	InsertionSort(void);
-	void Sort(array<int>^ list);
+	int Sort(array<int>^ list);
 };

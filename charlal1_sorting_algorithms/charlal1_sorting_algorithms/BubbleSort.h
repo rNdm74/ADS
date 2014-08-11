@@ -3,6 +3,8 @@
 ref class BubbleSort
 {
 public:
+	int o;
+public:
 	BubbleSort(void);
-	void Sort(array<int>^ list);
+	int Sort(array<int>^ list);
 };

@@ -2,9 +2,9 @@
 
 ref class SelectionSort
 {
-private:
-
+public:
+	int o;
 public:
 	SelectionSort(void);
-	void Sort(array<int>^ list);
+	int Sort(array<int>^ list);
 };

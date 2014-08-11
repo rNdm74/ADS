@@ -2,9 +2,10 @@
 
 ref class MergeSort
 {
-
+public:
+	int o;
 public:
 	MergeSort(void);
-	void Sort(array<int>^ list);
+	int Sort(array<int>^ list);
 	array<int>^ Merge(array<int>^ left, array<int>^ right);
 };

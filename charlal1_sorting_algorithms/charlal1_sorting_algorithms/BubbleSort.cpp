@@ -3,20 +3,27 @@
 
 BubbleSort::BubbleSort(void)
 {
+	o = 0;
 }
 
-void BubbleSort::Sort(array<int>^ list)
+int BubbleSort::Sort(array<int>^ list)
 {
+	o++;
 	bool swapped = true;
 
+	o++;
 	while ( swapped ) 
 	{
+		o++;
 		swapped = false;
 
+		o++;
 		for ( int i = 0; i < list->Length - 1; i++ ) 
 		{
+			o++;
 			if ( list[i] > list[i + 1] ) 
 			{
+				o+=4;
 				int temp = list[i + 1];
                 list[i + 1] = list[i];
                 list[i] = temp;
@@ -25,4 +32,6 @@ void BubbleSort::Sort(array<int>^ list)
 			}
 		}
 	}
+
+	return o;
 }
