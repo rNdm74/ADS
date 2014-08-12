@@ -3,11 +3,25 @@
 
 using namespace System;
 
+/// <summary>
+/// Summary for Constructor
+///	
+/// PRE-CONDITION:	No arguments required
+/// POST-CONDITION: The variable o to track the number of operations is initialized to 0 
+/// </summary>
 MergeSort::MergeSort(void)
 {
 	o= 0;
 }
 
+/// <summary>
+/// Summary for Sort
+///	
+/// PRE-CONDITION:	Must provide array to be sorted
+/// POST-CONDITION: The array will be sorted with a merge sort
+///					the global variable o will be increments for each assignment and operation
+///					The number of operations will be returned after the sort is finished
+/// </summary>
 int MergeSort::Sort( array<int>^ list )
 { 
 	o++;
@@ -34,42 +48,83 @@ int MergeSort::Sort( array<int>^ list )
 	return o;
 }
 
+/// <summary>
+/// Summary for Merge
+///	
+/// PRE-CONDITION:	Must provide two arrays of even size to be merged
+/// POST-CONDITION: The arrays will be merged
+///					the global variable o will be increments for each assignment and operation
+///					and an merged array will be returned
+/// </summary>
 array<int>^ MergeSort::Merge(array<int>^ left, array<int>^ right)
 {
 	o+=2;
-	/* calculate temporary list sizes */
+	// Calculate temporary list sizes
 	int left_length = left->Length;
 	int right_length = right->Length;
  
 	o++;
+	// list for left and right to be merged
 	array<int>^ list = gcnew array<int>(left->Length + right->Length);
  
 	o+=3;
-	int r = 0; /* right_half index */
-	int l = 0; /* left_half index */
-	int i = 0; /* list index */
+	int r = 0; // right index
+	int l = 0; // left index
+	int i = 0; // list index
   
-	/* merge left_half and right_half back into list */
 	o++;
-	for ( i = 0, r = 0, l = 0; l < left_length && r < right_length; i++)
+	// Merge left and right back into list
+	while ( l < left_length && r < right_length)
 	{
-		o+=3;
-
+		o++;
+		// If right is larger than left
 		if ( left[l] < right[r] ) 
 		{
+			o++;
+			// left item to list
 			list[i] = left[l++]; 
 		}
 		else 
 		{ 
+			o++;
+			// right item to list
 			list[i] = right[r++]; 
 		}
+
+		o++;
+		// Increment list index
+		i++;
 	}
  
-	/* Copy over leftovers of whichever temporary list hasn't finished */
-	o+=2;
-	for ( ; l < left_length; i++, l++ ) { o++; list[i] = left[l]; }
-	for ( ; r < right_length; i++, r++ ) { o++; list[i] = right[r]; }
+	o++;
+	// Copy over leftovers from left
+	while(l < left_length)
+	{
+		o++; 
+		// Assign left item to list
+		list[i] = left[l];
+
+		o+=2;
+		// Increment list and left index's
+		i++; 
+		l++;
+	}
 
 	o++;
+	// Copy over leftovers from right
+	while(r < right_length)
+	{
+		o++; 
+		// Assign right item to list
+		list[i] = right[r];
+
+		o+=2;
+		// Increment list and right index's 
+		i++; 
+		r++;
+	}
+
+	o++;
+	// Return complete list
     return list;
 }

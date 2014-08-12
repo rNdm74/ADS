@@ -53,6 +53,7 @@ namespace charlal1_sorting_algorithms {
 		}
 	private: System::Windows::Forms::SaveFileDialog^  saveFileDialog1;
 	private: System::Windows::Forms::Button^  bRun;
+
 	protected: 
 
 
@@ -77,11 +78,11 @@ namespace charlal1_sorting_algorithms {
 			// 
 			this->bRun->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->bRun->Location = System::Drawing::Point(66, 97);
+			this->bRun->Location = System::Drawing::Point(12, 12);
 			this->bRun->Name = L"bRun";
-			this->bRun->Size = System::Drawing::Size(140, 68);
+			this->bRun->Size = System::Drawing::Size(260, 68);
 			this->bRun->TabIndex = 0;
-			this->bRun->Text = L"Run";
+			this->bRun->Text = L"Save";
 			this->bRun->UseVisualStyleBackColor = true;
 			this->bRun->Click += gcnew System::EventHandler(this, &Form1::bRun_Click);
 			// 
@@ -89,10 +90,10 @@ namespace charlal1_sorting_algorithms {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(284, 261);
+			this->ClientSize = System::Drawing::Size(284, 93);
 			this->Controls->Add(this->bRun);
 			this->Name = L"Form1";
-			this->Text = L"Form1";
+			this->Text = L"Sorting Algorithms";
 			this->ResumeLayout(false);
 
 		}
