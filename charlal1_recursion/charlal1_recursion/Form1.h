@@ -29,6 +29,12 @@ namespace charlal1_recursion {
 			//
 			//TODO: Add the constructor code here
 			//
+
+			Recursion^ r = gcnew Recursion();
+
+			String^ result = r->ReverseIt("abcde");
+
+
 		}
 
 	protected:
