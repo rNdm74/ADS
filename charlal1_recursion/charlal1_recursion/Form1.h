@@ -32,9 +32,28 @@ namespace charlal1_recursion {
 
 			Recursion^ r = gcnew Recursion();
 
-			String^ result = r->ReverseIt("abcde");
+			String^ reverseIt = r->ReverseIt("abcde");
+			int sumToN = r->SumToN(5);
+			bool palindrome = r->Palindrome("abcba");
+			bool powerOfThree = r->PowerOfThree(21);
+
+			String^ removeIt = r->RemoveIt("o","The quick brown fox jumped over the lazy dog");
 
 
+			Random^ rGen = gcnew Random();
+			array<int>^ d = gcnew array<int>(100);
+
+			d[0] = 50;
+
+			for(int i = 1; i < d->Length; i++)
+				d[i] = rGen->Next(49);
+
+			Array::Sort(d);
+
+			bool binarySearch = r->BinarySearch(d, 51, 0, d->Length - 1);
+
+
+			MessageBox::Show("Finished");
 		}
 
 	protected:
