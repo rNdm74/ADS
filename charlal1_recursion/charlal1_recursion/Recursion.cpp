@@ -8,8 +8,8 @@ Recursion::Recursion(void)
 /// <summary>
 /// Summary for ReverseIt
 ///	
-/// PRE-CONDITION:	
-/// POST-CONDITION: 
+/// PRE-CONDITION: Must input type String^	
+/// POST-CONDITION: Returns a String^, that has been reversed
 ///					
 /// </summary>
 String^ Recursion::ReverseIt(String^ s)
@@ -17,14 +17,16 @@ String^ Recursion::ReverseIt(String^ s)
 	if(s->Length == 1)
 		return s;
 	else
-		return ReverseIt(s->Substring(1, s->Length - 1)) + s[0];
+		return ReverseIt(s->Substring(1, s->Length - 1)) + s[0]; // append the first char to the end of the string
 }
 
 /// <summary>
 /// Summary for RemoveIt
 ///	
-/// PRE-CONDITION:	
-/// POST-CONDITION: 
+/// PRE-CONDITION:	Takes to String^'s t assuming is 1 char long 
+///					and the string you want to you want to remove the char from.
+/// POST-CONDITION: Output is a string, with the first removed instance of t
+///					this will continue untill all instances of t has been removed
 ///					
 /// </summary>
 String^ Recursion::RemoveIt(String^ t, String^ s)
@@ -46,8 +48,9 @@ String^ Recursion::RemoveIt(String^ t, String^ s)
 /// <summary>
 /// Summary for PowerOfThree
 ///	
-/// PRE-CONDITION:	
-/// POST-CONDITION: 
+/// PRE-CONDITION:	Input int that you want to test is a power of three	
+/// POST-CONDITION: Output is a bool, on each call the number new input 
+///					number is devided by three untill the base case is reached
 ///					
 /// </summary>
 bool Recursion::PowerOfThree(int n)
@@ -56,7 +59,7 @@ bool Recursion::PowerOfThree(int n)
 	if(n == 1)
 		return true;
 
-	// if the number is no mod of 3 cannot divide evenly by 3
+	// if the number is not modulo of 3 cannot divide evenly
 	if(n % 3 == 1)
 		return false;
 	else
@@ -66,8 +69,10 @@ bool Recursion::PowerOfThree(int n)
 /// <summary>
 /// Summary for Palindrome
 ///	
-/// PRE-CONDITION:	
-/// POST-CONDITION: 
+/// PRE-CONDITION:  Takes a String^ to test if palindrome	
+/// POST-CONDITION:	Returns true or false if palindrome or not
+///					On each call the input string first and last chars are tested 
+///					then recalled with with a string not including the two tested chars
 ///					
 /// </summary>
 bool Recursion::Palindrome(String^ s)
@@ -91,8 +96,8 @@ bool Recursion::Palindrome(String^ s)
 /// <summary>
 /// Summary for SumToN
 ///	
-/// PRE-CONDITION:	
-/// POST-CONDITION: 
+/// PRE-CONDITION:	Integer that you want to sum 
+/// POST-CONDITION: Returns int that has been added to itself -1 
 ///					
 /// </summary>
 int Recursion::SumToN(int n)
@@ -106,21 +111,32 @@ int Recursion::SumToN(int n)
 /// <summary>
 /// Summary for BinarySearch
 ///	
-/// PRE-CONDITION:	
-/// POST-CONDITION: 
+/// PRE-CONDITION:	Accepts a sorted array of integerValues, the search target 
+///					upper and lower of the array you want to search
+/// POST-CONDITION: The array is not changed, a bool is returned on 5 cases
+///					1. lower bound is greater than upper bound
+///					2. return true if array[mid] = target
+///					3. if target is in upper
+///					4. if target is in lower
+///					5. return if target not in upper or lower
 ///					
 /// </summary>
 bool Recursion::BinarySearch(array<int>^ dataValues, int target, int lBound, int uBound)
 {
+	// Not found if lower is greater than upper
 	if(lBound > uBound)
 		return false;
 
+	// Get the middle of the lower and upper bounds
 	int mid = (lBound + uBound) / 2;
 
+	// If the target is the mid you have found
 	if(dataValues[mid] == target)
 		return true;
-	else if(dataValues[mid] < target)
+	else if(dataValues[mid] < target) // Target is in upper
 		return BinarySearch(dataValues, target, mid + 1, uBound);
-	else
+	else if(dataValues[mid] > target) // Target is in lower
 		return BinarySearch(dataValues, target, lBound, mid - 1);
+	else 
+		return false; // Target not in list
 }

@@ -51,7 +51,7 @@ namespace charlal1_recursion {
 			MergeSort^ s = gcnew MergeSort();
 			s->MergeRecursive( numbers, 0 , numbers->Length - 1 );
 
-			bool binarySearch = r->BinarySearch(numbers, 51, 0, numbers->Length - 1);
+			bool binarySearch = r->BinarySearch(numbers, 49, 0, numbers->Length - 1);
 
 			MessageBox::Show("Finished");
 		}
