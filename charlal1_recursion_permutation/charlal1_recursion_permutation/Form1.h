@@ -38,8 +38,27 @@ namespace charlal1_recursion_permutation {
 
 			
 
-			p->PermuteV2(1, 3);
+			//p->PermuteV2("", 1, 3);
+
+			//String^ permutation = p->result;
+			
+			//array<bool>^ used = gcnew array<bool>(4);
+
+			p->PermuteV3("", gcnew array<bool>(3), 1, 3);
+
 			String^ permutation = p->result;
+
+			/*for(int i = 0; i < result->Length; i++)
+			{
+				permutation += result[i];
+
+				if(i == 3)
+					permutation += ",";
+
+				if(i > 3 && i % 3 == 0)
+					permutation += ",";
+			}*/
+
 			MessageBox::Show(p->result);
 		}
 

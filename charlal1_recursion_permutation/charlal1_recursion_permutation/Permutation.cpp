@@ -33,7 +33,7 @@ void Permutation::Swap(array<wchar_t>^ s, int c1, int c2)
 	s[c2] = t;
 }
 
-void Permutation::PermuteV2(int startingLocation, int itemsToPermute)
+void Permutation::PermuteV2(String^ temp, int startingLocation, int itemsToPermute)
 {
 	/*for (int aa = 1; aa <= itemsToPermute; aa++)
     {
@@ -46,46 +46,46 @@ void Permutation::PermuteV2(int startingLocation, int itemsToPermute)
         }
     }*/
 	
-
-	for (int cc = 1; cc <= itemsToPermute; cc++)
+	if(startingLocation <= itemsToPermute)
 	{
-		result += cc + "";
-		
-		if(startingLocation <= itemsToPermute)
-		{	
-			PermuteV2(startingLocation + 1, itemsToPermute);			
-		}
-		else
+		for (int i = 1; i <= itemsToPermute; i++)
 		{
-			result += " | ";
+			PermuteV2(temp + Convert::ToString(i), startingLocation + 1, itemsToPermute);
 		}
-
-		
 	}
+	else
+	{
+		result += temp + " ";
 
-	
+	}
+}
 
-	
+void Permutation::PermuteV3(String^ temp, array<bool>^ used, int startingLocation, int itemsToPermute)
+{
+	if(startingLocation <= itemsToPermute)
+	{
+		for (int i = 1; i <= itemsToPermute; i++)
+		{
+			// Zero based array
+			int j = i - 1;
 
-	
-	//array<wchar_t>^ s = gcnew array<wchar_t>(itemsToPermute);
-	//int temp;
-	//
-	//if( startingLocation == itemsToPermute)
-	//{
-	//	return Convert::ToString(startingLocation);
-	//}
-	//else
-	//{
-	//	
+			// Only process when used bool is false
+			if(used[j] == false)
+			{
+				// Using that position
+				used[j] = true;				
 
-	//	for(int i = 1; i <= itemsToPermute; i++)
-	//	{
-	//		//for(int j = 1; j < itemsToPermute; j++)
-	//		//temp = i;
-	//		return i + PermuteV2(startingLocation + 1, itemsToPermute);
-	//	}	
+				// Get next number
+				PermuteV3(temp + Convert::ToString(i), used, startingLocation + 1, itemsToPermute);
 
-	//	
-	//}
+				// Reset
+				used[j] = false;
+			}
+		}
+	}
+	else
+	{		
+		// Output
+		result += temp + " ";
+	}
 }
