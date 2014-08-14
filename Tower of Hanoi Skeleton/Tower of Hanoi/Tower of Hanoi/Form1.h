@@ -172,7 +172,7 @@ public:
 		}
 		else
 		{
-			//
+			// Recursive
 			solveTowers(nDisks - 1, sourcePole, auxPole, destPole);
 			
 			// move disk from source to dest
@@ -181,7 +181,7 @@ public:
 			Refresh();
 			System::Threading::Thread::Sleep(500);
 
-			//
+			// Recursive
 			solveTowers(nDisks - 1, auxPole, destPole, sourcePole);
 		}
 	}

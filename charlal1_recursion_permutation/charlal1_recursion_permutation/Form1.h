@@ -33,33 +33,12 @@ namespace charlal1_recursion_permutation {
 
 			//String^ input = "123";
 			//array<wchar_t>^ i = input->ToCharArray();
-
 			//p->Permute(i, 0);
-
 			
-
-			//p->PermuteV2("", 1, 3);
-
-			//String^ permutation = p->result;
-			
-			//array<bool>^ used = gcnew array<bool>(4);
-
-			p->PermuteV3("", gcnew array<bool>(3), 1, 3);
-
-			String^ permutation = p->result;
-
-			/*for(int i = 0; i < result->Length; i++)
-			{
-				permutation += result[i];
-
-				if(i == 3)
-					permutation += ",";
-
-				if(i > 3 && i % 3 == 0)
-					permutation += ",";
-			}*/
-
-			MessageBox::Show(p->result);
+			tbDisplay->Text =	"Recursive permutation\n\nRepetition:\n" + 
+								p->Permute("", 1, 3) + 
+								"\n\nBool Array:\n" + 
+								p->Permute("", gcnew array<bool>(3), 1, 3);
 		}
 
 	protected:
@@ -73,6 +52,10 @@ namespace charlal1_recursion_permutation {
 				delete components;
 			}
 		}
+	private: System::Windows::Forms::RichTextBox^  tbDisplay;
+	protected: 
+
+	protected: 
 
 	private:
 		/// <summary>
@@ -87,11 +70,32 @@ namespace charlal1_recursion_permutation {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->components = gcnew System::ComponentModel::Container();
-			this->Size = System::Drawing::Size(300,300);
-			this->Text = L"Form1";
-			this->Padding = System::Windows::Forms::Padding(0);
+			this->tbDisplay = (gcnew System::Windows::Forms::RichTextBox());
+			this->SuspendLayout();
+			// 
+			// tbDisplay
+			// 
+			this->tbDisplay->BackColor = System::Drawing::SystemColors::Control;
+			this->tbDisplay->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->tbDisplay->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->tbDisplay->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->tbDisplay->Location = System::Drawing::Point(0, 0);
+			this->tbDisplay->Name = L"tbDisplay";
+			this->tbDisplay->Size = System::Drawing::Size(284, 261);
+			this->tbDisplay->TabIndex = 0;
+			this->tbDisplay->Text = L"";
+			// 
+			// Form1
+			// 
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->ClientSize = System::Drawing::Size(284, 261);
+			this->Controls->Add(this->tbDisplay);
+			this->Name = L"Form1";
+			this->Text = L"Form1";
+			this->ResumeLayout(false);
+
 		}
 #pragma endregion
 	};

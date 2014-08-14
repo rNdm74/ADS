@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Recursion.h"
+#include "MergeSort.h"
 
 namespace charlal1_recursion {
 
@@ -39,19 +40,18 @@ namespace charlal1_recursion {
 
 			String^ removeIt = r->RemoveIt("o","The quick brown fox jumped over the lazy dog");
 
-
 			Random^ rGen = gcnew Random();
-			array<int>^ d = gcnew array<int>(100);
+			array<int>^ numbers = gcnew array<int>(100);
 
-			d[0] = 50;
+			numbers[0] = 50;
 
-			for(int i = 1; i < d->Length; i++)
-				d[i] = rGen->Next(49);
+			for(int i = 1; i < numbers->Length; i++)
+				numbers[i] = rGen->Next(49);
+			
+			MergeSort^ s = gcnew MergeSort();
+			s->MergeRecursive( numbers, 0 , numbers->Length - 1 );
 
-			Array::Sort(d);
-
-			bool binarySearch = r->BinarySearch(d, 51, 0, d->Length - 1);
-
+			bool binarySearch = r->BinarySearch(numbers, 51, 0, numbers->Length - 1);
 
 			MessageBox::Show("Finished");
 		}

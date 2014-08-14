@@ -204,6 +204,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\MergeSort.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\Recursion.cpp"
 				>
 			</File>
@@ -242,6 +246,10 @@
 					SubType="Designer"
 					>
 				</File>
+			</File>
+			<File
+				RelativePath=".\MergeSort.h"
+				>
 			</File>
 			<File
 				RelativePath=".\Recursion.h"

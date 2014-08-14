@@ -33,7 +33,7 @@ namespace charlal1_recursive_merge_sort {
 
 			array<int>^ numbers = { 3, 8, 7, 5, 2, 1, 9, 6, 4 };
 
-			s->MergeRecursive(numbers, 0, numbers->Length-1);
+			s->MergeRecursive( numbers, 0, numbers->Length - 1 );
 
 			MessageBox::Show("Finished");
 		}

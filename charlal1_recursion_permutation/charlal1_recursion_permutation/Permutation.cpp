@@ -1,67 +1,94 @@
 #include "StdAfx.h"
 #include "Permutation.h"
 
+/// <summary>
+/// Summary for Constructor
+///	
+/// PRE-CONDITION:	
+/// POST-CONDITION: String^ out is initialized
+///					
+/// </summary>
 Permutation::Permutation(void)
 {
-	result = "|";
+	out = "";
 }
 
-void Permutation::Permute(array<wchar_t>^ s, int n)
+/// <summary>
+/// Summary for Permute with repetition
+///	
+/// PRE-CONDITION:	Must provide String^, and two integers.
+///					1: The starting value 
+///					2: The number of items to permute
+/// POST-CONDITION:	Will return the output string on each call
+///					On first run the out string will be set to temp
+///					String^ temp will be appended with the loop int
+///					int startingLocation will be incremented by 1
+///					No change to itemsToPermute
+///	
+///					
+/// </summary>
+String^ Permutation::Permute(String^ temp, int startingLocation, int itemsToPermute)
 {
-	int j;
+	/** Example of iterative
+	 *
+	 *	for (int aa = 1; aa <= itemsToPermute; aa++)
+	 *	{
+     *		for (int bb = 1; bb <= itemsToPermute; bb++)
+     *		{
+     *			for (int cc = 1; cc <= itemsToPermute; cc++)
+     *			{
+     *				result += aa + "" + bb + "" + cc + "" + " | ";
+     *			}
+     *		}
+	 *	}
+	 *
+     */
 
-	if(n == s->Length)
-	{
-
-		result += gcnew String(s) + "|";
-	}
-	else
-		for(j = n; j < s->Length; j++)
-		{
-			Swap(s, n, j);
-
-			Permute(s, n + 1);
-			
-			Swap(s, j, n);
-		}
-}
-
-void Permutation::Swap(array<wchar_t>^ s, int c1, int c2)
-{
-	wchar_t t = s[c1];
-	s[c1] = s[c2];
-	s[c2] = t;
-}
-
-void Permutation::PermuteV2(String^ temp, int startingLocation, int itemsToPermute)
-{
-	/*for (int aa = 1; aa <= itemsToPermute; aa++)
-    {
-        for (int bb = 1; bb <= itemsToPermute; bb++)
-        {
-            for (int cc = 1; cc <= itemsToPermute; cc++)
-            {
-                result += aa + "" + bb + "" + cc + "" + " | ";
-            }
-        }
-    }*/
+	// Reset output string
+	if(temp == "")
+		out = temp;
 	
+	//
 	if(startingLocation <= itemsToPermute)
 	{
+		// Recursive loop
 		for (int i = 1; i <= itemsToPermute; i++)
 		{
-			PermuteV2(temp + Convert::ToString(i), startingLocation + 1, itemsToPermute);
+			// 
+			Permute(temp + Convert::ToString(i), startingLocation + 1, itemsToPermute);
 		}
 	}
 	else
 	{
-		result += temp + " ";
-
+		// Print output
+		out += temp + " ";		
 	}
+
+	return out;
 }
 
-void Permutation::PermuteV3(String^ temp, array<bool>^ used, int startingLocation, int itemsToPermute)
+/// <summary>
+/// Summary for Permute with repetition
+///	
+/// PRE-CONDITION:	Must provide String^, array<bool>^ and two integers.
+///					array<bool>^ must be the same size as the itemsToPermute 
+///					1: The starting value 
+///					2: The number of items to permute
+/// POST-CONDITION:	Will return the output string on each call
+///					On first run the out string will be set to temp
+///					String^ temp will be appended with the loop int
+///					int startingLocation will be incremented by 1
+///					No change to itemsToPermute
+///	
+///					
+/// </summary>
+String^ Permutation::Permute(String^ temp, array<bool>^ used, int startingLocation, int itemsToPermute)
 {
+	// Reset output on first run
+	if(temp == "")
+		out = temp;
+
+	//
 	if(startingLocation <= itemsToPermute)
 	{
 		for (int i = 1; i <= itemsToPermute; i++)
@@ -76,7 +103,7 @@ void Permutation::PermuteV3(String^ temp, array<bool>^ used, int startingLocatio
 				used[j] = true;				
 
 				// Get next number
-				PermuteV3(temp + Convert::ToString(i), used, startingLocation + 1, itemsToPermute);
+				Permute(temp + Convert::ToString(i), used, startingLocation + 1, itemsToPermute);
 
 				// Reset
 				used[j] = false;
@@ -86,6 +113,49 @@ void Permutation::PermuteV3(String^ temp, array<bool>^ used, int startingLocatio
 	else
 	{		
 		// Output
-		result += temp + " ";
+		out += temp + " ";		
 	}
+
+	return out;
+}
+
+/// <summary>
+/// Summary for Permute EXPERIMENT
+///	
+/// PRE-CONDITION:	Must provide array, the starting value
+/// POST-CONDITION: 
+///					
+/// </summary>
+void Permutation::Permute(array<wchar_t>^ s, int n)
+{
+	int j;
+
+	if(n == s->Length)
+	{
+
+		out += gcnew String(s) + "|";
+	}
+	else
+		for(j = n; j < s->Length; j++)
+		{
+			Swap(s, n, j);
+
+			Permute(s, n + 1);
+			
+			Swap(s, j, n);
+		}
+}
+
+/// <summary>
+/// Summary for Swap for permute EXPERIMENT
+///	
+/// PRE-CONDITION:	Must provide array, and the two position that are being swapped
+/// POST-CONDITION: 
+///					
+/// </summary>
+void Permutation::Swap(array<wchar_t>^ s, int c1, int c2)
+{
+	wchar_t t = s[c1];
+	s[c1] = s[c2];
+	s[c2] = t;
 }

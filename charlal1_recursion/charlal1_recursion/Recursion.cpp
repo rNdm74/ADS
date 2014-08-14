@@ -5,6 +5,13 @@ Recursion::Recursion(void)
 {
 }
 
+/// <summary>
+/// Summary for ReverseIt
+///	
+/// PRE-CONDITION:	
+/// POST-CONDITION: 
+///					
+/// </summary>
 String^ Recursion::ReverseIt(String^ s)
 {
 	if(s->Length == 1)
@@ -13,6 +20,13 @@ String^ Recursion::ReverseIt(String^ s)
 		return ReverseIt(s->Substring(1, s->Length - 1)) + s[0];
 }
 
+/// <summary>
+/// Summary for RemoveIt
+///	
+/// PRE-CONDITION:	
+/// POST-CONDITION: 
+///					
+/// </summary>
 String^ Recursion::RemoveIt(String^ t, String^ s)
 {
 	// If the string does NOT contain t
@@ -29,6 +43,13 @@ String^ Recursion::RemoveIt(String^ t, String^ s)
 	}
 }
 
+/// <summary>
+/// Summary for PowerOfThree
+///	
+/// PRE-CONDITION:	
+/// POST-CONDITION: 
+///					
+/// </summary>
 bool Recursion::PowerOfThree(int n)
 {
 	// lowest number divisible by 3
@@ -42,6 +63,13 @@ bool Recursion::PowerOfThree(int n)
 		return PowerOfThree(n / 3); // devide n by 3
 }
 
+/// <summary>
+/// Summary for Palindrome
+///	
+/// PRE-CONDITION:	
+/// POST-CONDITION: 
+///					
+/// </summary>
 bool Recursion::Palindrome(String^ s)
 {
 	// Check if got to the middle
@@ -60,6 +88,13 @@ bool Recursion::Palindrome(String^ s)
 	return false;
 }
 
+/// <summary>
+/// Summary for SumToN
+///	
+/// PRE-CONDITION:	
+/// POST-CONDITION: 
+///					
+/// </summary>
 int Recursion::SumToN(int n)
 {
 	if(n == 1)
@@ -68,6 +103,13 @@ int Recursion::SumToN(int n)
 		return SumToN(n - 1) + n;
 }
 
+/// <summary>
+/// Summary for BinarySearch
+///	
+/// PRE-CONDITION:	
+/// POST-CONDITION: 
+///					
+/// </summary>
 bool Recursion::BinarySearch(array<int>^ dataValues, int target, int lBound, int uBound)
 {
 	if(lBound > uBound)
