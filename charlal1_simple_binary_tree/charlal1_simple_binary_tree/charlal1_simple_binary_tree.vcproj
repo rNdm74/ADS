@@ -212,6 +212,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\ExpressionTree.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\stdafx.cpp"
 				>
 				<FileConfiguration
@@ -246,6 +250,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\ExpressionTree.h"
+				>
+			</File>
+			<File
 				RelativePath=".\Form1.h"
 				FileType="3"
 				>
@@ -254,6 +262,10 @@
 					SubType="Designer"
 					>
 				</File>
+			</File>
+			<File
+				RelativePath=".\LinkedListStack.h"
+				>
 			</File>
 			<File
 				RelativePath=".\resource.h"

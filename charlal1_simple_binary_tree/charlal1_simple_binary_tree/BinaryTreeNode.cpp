@@ -1,7 +1,7 @@
 #include "StdAfx.h"
 #include "BinaryTreeNode.h"
 
-BinaryTreeNode::BinaryTreeNode(int startValue)
+BinaryTreeNode::BinaryTreeNode(String^ startValue)
 {
 	nodeValue = startValue;
 	leftChild = nullptr;

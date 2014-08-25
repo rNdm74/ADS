@@ -1,22 +1,24 @@
 #pragma once
 
+using namespace System;
+
 ref class BinaryTreeNode
 {
 private:
-	int nodeValue;
+	String^ nodeValue;
 	BinaryTreeNode^ leftChild;
 	BinaryTreeNode^ rightChild;
 
 public:
-	BinaryTreeNode(int startValue);
+	BinaryTreeNode(String^ startValue);
 
 	//Gets and sets
-	void setNodeValue(int v)						{ nodeValue = v; }
+	void setNodeValue(String^ v)					{ nodeValue = v; }
 	void setLeftChild(BinaryTreeNode^ newLeft)		{ leftChild = newLeft; }
 	void setRightChild(BinaryTreeNode^ newRight)	{ rightChild = newRight; }
 
-	int getNodeValue()								{ return nodeValue; }
+	String^ getNodeValue()							{ return nodeValue; }
 	BinaryTreeNode^ getLeftChild()					{ return leftChild; }
 	BinaryTreeNode^ getRightChild()					{ return rightChild; }
-
+	
 };
