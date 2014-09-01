@@ -47,6 +47,7 @@ namespace charlal1_simple_binary_tree {
 		}
 
 	private: BinaryTree^ globalTree;
+	private: Graphics^ treeCanvas;
 
 	private: System::Windows::Forms::ListBox^  lbDisplay;
 
@@ -308,10 +309,9 @@ private: System::Void rbTree_CheckedChanged(System::Object^  sender, System::Eve
 			 bPostFix->Enabled = selected;
 
 			 // Clear canvas
-			 Graphics^ treeCanvas = pGraphicalDisplay->CreateGraphics();
 			 treeCanvas->Clear(Color::White);
 
-			 globalTree->Draw(globalTree->getRootNode(), pGraphicalDisplay->Width / 2, 50, 50, treeCanvas);
+			 globalTree->Draw(globalTree->getRootNode(), pGraphicalDisplay->Width / 2, 50, 75, treeCanvas);
 		 }		
 
 private: System::Void bTree_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -338,6 +338,13 @@ private: System::Void bTree_Click(System::Object^  sender, System::EventArgs^  e
 private: System::Void Form1_Load(System::Object^  sender, System::EventArgs^  e) {
 			 // Init
 			 globalTree = createSimpleBinaryTree();
+
+			 // Clear canvas
+			 treeCanvas = pGraphicalDisplay->CreateGraphics();
+			 treeCanvas->Clear(Color::White);
+			 
+			 
+			 globalTree->Draw(globalTree->getRootNode(), pGraphicalDisplay->Width / 2, 50, 75, treeCanvas);
 		 }
 private: BinaryTree^ createSimpleBinaryTree() {
 

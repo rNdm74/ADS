@@ -3,16 +3,22 @@
 
 BinaryTree::BinaryTree()
 {
+	leftAngle = 340;
+	rightAngle = 200;
 	rootNode = gcnew BinaryTreeNode("0");
 }
 
 BinaryTree::BinaryTree(String^ rootValue)
 {
+	leftAngle = 340;
+	rightAngle = 200;
 	rootNode = gcnew BinaryTreeNode(rootValue);
 }
 
 BinaryTree::BinaryTree(String^ rootValue, BinaryTree^ leftSubTree, BinaryTree^ rightSubTree)
 {
+	leftAngle = 340;
+	rightAngle = 200;
 	rootNode = gcnew BinaryTreeNode(rootValue);
 
 	addLeftSubTree(leftSubTree);
@@ -130,65 +136,54 @@ void BinaryTree::PostFix(BinaryTreeNode^ inputRootNode, ListBox^ targetListBox)
 {
 }
 
+
 void BinaryTree::Draw(BinaryTreeNode^ inputRootNode, int startX, int startY, int currOffsetX, Graphics^ treeCanvas)
 {
-	// Get nodes
-	BinaryTreeNode^ left = inputRootNode->getLeftChild();
-	BinaryTreeNode^ right = inputRootNode->getRightChild();
-
-	Pen^ p = gcnew Pen(Color::Black);
-
 	// If leaf node
-	if( left == nullptr && right == nullptr )
+	if( inputRootNode != nullptr )
 	{
-		// Return node value
-		treeCanvas->DrawEllipse(p, startX - 25, startY - 25, 50, 50);
-	}
-	else
-	{		
-		// Draw node
-		treeCanvas->DrawEllipse(p, startX - 25, startY - 25, 50, 50);
-		System::Threading::Thread::Sleep(1000);
-		
+		Pen^ p = gcnew Pen(Color::Black);
 
-		//
-		if(left != nullptr)
+		int newOffsetX = currOffsetX * 0.75;
+
+		if(inputRootNode->getLeftChild() != nullptr)
 		{
-			int x1 = startX - 25;
-			int y1 = startY + 25;
+			// Convert to radians;
+			double radiansAngle = leftAngle * 0.01745;
 
-			y1 += 25;
+			int dstX = startX - (75 * Math::Cos(radiansAngle));
+			int dstY = startY - (75 * Math::Sin(radiansAngle));
 
-			x1 -= currOffsetX;
-			x1 += 15;
+			leftAngle -= 10;
 			
 			// Draw edge to next node
-			treeCanvas->DrawLine(p, x1, y1, startX, startY);
+			treeCanvas->DrawLine(p, startX, startY, dstX, dstY);
 
 			// Recurse draw left child
-			Draw(left, x1, y1, currOffsetX - 10, treeCanvas);			
+			Draw(inputRootNode->getLeftChild(), dstX, dstY, newOffsetX, treeCanvas);			
 		}
 
 		//
-		if(right != nullptr)
+		if(inputRootNode->getRightChild() != nullptr)
 		{
-			int x1 = startX - 25;
-			int y1 = startY + 25;
+			double radiansAngle = rightAngle * 0.01745;
 
-			y1 += 25;
+			int dstX = startX - (75 * Math::Cos(radiansAngle));
+			int dstY = startY - (75 * Math::Sin(radiansAngle));
 
-			x1 += currOffsetX;
-			x1 -= 15;
+			rightAngle += 10;
 
-			// Draw edge to next node
-			treeCanvas->DrawLine(p, x1, y1, startX, startY);
+			//// Draw edge to next node
+			treeCanvas->DrawLine(p, startX, startY, dstX, dstY);
 
 			// Recurse draw left child
-			Draw(right, x1, y1, currOffsetX-10, treeCanvas);
+			Draw(inputRootNode->getRightChild(), dstX, dstY, newOffsetX, treeCanvas);
 		}
 
-		
-	}
+		// Return node value
+		treeCanvas->FillEllipse(Brushes::White, startX - 25, startY - 25, 50, 50);
+		treeCanvas->DrawString(inputRootNode->getNodeValue(), gcnew Font("Arial", 16),Brushes::Red, startX-10, startY-10);
+		treeCanvas->DrawEllipse(p, startX - 25, startY - 25, 50, 50);
 
-	
+	}	
 }

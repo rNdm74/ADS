@@ -7,6 +7,10 @@ using namespace System::Drawing;
 
 ref class BinaryTree
 {
+private:
+	int leftAngle;
+	int rightAngle;
+
 protected:
 	BinaryTreeNode^ rootNode;
 
