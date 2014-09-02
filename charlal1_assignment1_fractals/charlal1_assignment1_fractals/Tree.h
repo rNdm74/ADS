@@ -8,8 +8,11 @@ ref class Tree
 private:
 	Pen^ pen;
 	Graphics^ graphics;
-	int depth;
-	void draw(double x, double y, double length, double angle);
+	Random^ rGen;
+
+	int leftOffset, rightOffset;
+
+	void draw(int depth, int x, int y, int length, int angle);
 
 public:
 	Tree(Graphics^ graphics);

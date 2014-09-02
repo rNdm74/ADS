@@ -13,7 +13,7 @@ Dragon::Dragon(Graphics^ graphics)
 	this->graphics = graphics;
 
 	// Create pen
-	pen = gcnew System::Drawing::Pen(Color::Red);
+	pen = gcnew System::Drawing::Pen( Color::Red );
 }
 
 /// <summary>
@@ -30,7 +30,7 @@ Dragon::Dragon(Graphics^ graphics)
 void Dragon::Draw(int depth, int width, int height)
 {
 	// Clear canvas
-	graphics->Clear(Color::White);
+	graphics->Clear( Color::White );
 
 	// Set starting points
 	x1 = start;
@@ -40,7 +40,7 @@ void Dragon::Draw(int depth, int width, int height)
 	radian = 0;
 
 	// Start the draw
-	draw(width/2, depth, 1); 
+	draw( width / 2, depth, 1 ); 
 }
 
 /// <summary>
@@ -62,16 +62,16 @@ void Dragon::draw(double length, int depth, double angle)
 	if(depth <= 0)
 	{
 		// Draw the line
-		forward(length);
+		forward( length );
 	}
 	else
 	{
 		// Recurse call turn 45 degrees, draw, turn -90 degrees, draw, turn 45 degrees
-		turn(angle * 45);
-		draw(length / scale, depth - 1, 1);
-		turn(-angle * 90);
-		draw(length /  scale, depth - 1, -1);
-		turn(angle * 45);
+		turn( angle * 45 );
+		draw( length / scale, depth - 1, 1 );
+		turn( -angle * 90 );
+		draw( length /  scale, depth - 1, -1 );
+		turn( angle * 45 );
 	}
 }
 
@@ -95,11 +95,11 @@ void Dragon::turn(double angle)
 void Dragon::forward(double length)
 {
 	// Find the destination point
-	int x2 = x1 + (int) (Math::Cos(radian) * length);
-    int y2 = y1 + (int) (Math::Sin(radian) * length);
+	int x2 = x1 + (int) ( Math::Cos( radian ) * length );
+    int y2 = y1 + (int) ( Math::Sin( radian ) * length );
 
 	// Draw the line
-	graphics->DrawLine(pen, x1, y1, x2, y2);
+	graphics->DrawLine( pen, x1, y1, x2, y2 );
 
 	// Change start location to x1, y1
 	x1 = x2;

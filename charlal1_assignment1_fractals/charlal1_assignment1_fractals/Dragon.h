@@ -9,7 +9,6 @@ static const int	start = 125;
 ref class Dragon
 {
 private:
-	//
 	Pen^ pen;
 	Graphics^ graphics;
 

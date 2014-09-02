@@ -1,74 +1,81 @@
 #include "StdAfx.h"
 #include "Koch.h"
 
+/// <summary>
+/// Summary for Constructor
+///	
+/// PRE-CONDITION:	Must provide graphics object for drawing
+/// POST-CONDITION: Assign the graphics object and create the pen for drawing 
+/// </summary>
 Koch::Koch(Graphics^ graphics)
 {
 	this->graphics = graphics;
 
 	redPen = gcnew System::Drawing::Pen(Color::Red);
-	whitePen = gcnew System::Drawing::Pen(Color::White);
 }
 
+/// <summary>
+/// Summary for Draw
+///	
+/// PRE-CONDITION:	Must provide the wanted running depth, 
+///					Width and height of the canvas
+///
+/// POST-CONDITION: Graphics canvas is cleared for drawing
+///					The three sides of the triangle are drawn
+///
+/// </summary>
 void Koch::Draw(int depth, int width, int height)
 {
-	this->width = width;
-	this->height = height;
-	this->depth = depth;
-
-	int length = 400;
-
 	// Clear canvas
 	graphics->Clear(Color::White);
-
-	int x1 = 100;
-	int y1 = 150;
-	int size = width - 200;
-
-	int x2, y2, x3, y3;
-
-	x2 = x1 + size;
-	y2 = y1; 
-
-	x3 = x1 + size / 2; 
-	y3 = (y1 + size);
 	
-	// Top line
-	draw(x1, y1, x3, y3, depth);
-	// Right line
-	draw(x3, y3, x2, y2, depth);
-	// Left line
-	draw(x2, y2, x1, y1, depth);
+	// Bottom
+	draw(depth, 20, height - 150, width - 20,height - 150);
+	// Right
+	draw(depth, width - 20, height - 150, width / 2, 20);
+	// Left
+    draw(depth, width / 2, 20, 20, height - 150);
 }
 
-void Koch::draw(int x1, int y1, int x5, int y5, int n)
+/// <summary>
+/// Summary for draw
+///	
+/// PRE-CONDITION:	Must provide depth, the start point and end point of line
+/// POST-CONDITION: When depth is 0, a line is drawn to the screen
+///
+/// </summary>
+void Koch::draw(int depth, int x1, int y1, int x5, int y5)
 {
-	int x2, y2, x3, y3, x4, y4;
+	// Points
+	int deltaX, deltaY, x2, y2, x3, y3, x4, y4;
+ 
+	// Draw when depth is 0
+	if (depth <= 0)
+	{
+		graphics->DrawLine(redPen, x1, y1, x5, y5);
+	}
+	else
+	{
+		// Length of line
+		deltaX = x5 - x1;
+		deltaY = y5 - y1;
 
-	double d, a, h;
+		// Peak left base 
+		x2 = x1 + deltaX / 3;
+		y2 = y1 + deltaY / 3;
 
-	graphics->DrawLine(redPen, x1, y1, x5, y5);
+		// Peak
+		x3 = (int) ( 0.5 * ( x1 + x5 ) + Math::Sqrt(3) * ( y1 - y5 ) / 6 );
+		y3 = (int) ( 0.5 * ( y1 + y5 ) + Math::Sqrt(3) * ( x5 - x1 ) / 6 );
 
-	if(n == 0)
-		return;
+		// Peak right base
+		x4 = x1 + 2 * deltaX / 3;
+		y4 = y1 + 2 * deltaY / 3;
 
-	d = Math::Sqrt((x5-x1) * (x5-x1) + (y5-y1) * (y5-y1)) / 3;	// 1/3 of the length
-	a = Math::Atan2((double) (y5-y1), (double) (x5-x1));		// angle of the line
-	h = 2 * d * Math::Cos(30 * Math::PI / 180);					// distance to peak
-
-	x2 = x1 + (int) (d * Math::Cos(a)); 
-	y2 = y1 + (int) (d * Math::Sin(a));
-	x3 = x1 + (int) (h * Math::Cos((a + 30 * Math::PI / 180)));	// coordinates of peak
-	y3 = y1 + (int) (h * Math::Sin((a + 30 * Math::PI / 180)));
-	x4 = x1 + (int) (2 * d * Math::Cos(a));
-	y4 = y1 + (int) (2 * d * Math::Sin(a));
-	
-	// Erase the middle
-	graphics->DrawLine(whitePen, x1, y1, x5, y5);
-
-	// Recursive calls to replace line with new pattern
-	draw(x1, y1, x2, y2, n - 1);	 
-	draw(x2, y2, x3, y3, n - 1);
-	draw(x3, y3, x4, y4, n - 1);
-	draw(x4, y4, x5, y5, n - 1);
-
+		// Recurse draw the four lines
+		draw (depth - 1, x1, y1, x2, y2);
+		draw (depth - 1, x2, y2, x3, y3);
+		draw (depth - 1, x3, y3, x4, y4);
+		draw (depth - 1, x4, y4, x5, y5);
+	}
 }

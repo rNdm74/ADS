@@ -1,41 +1,60 @@
 #include "StdAfx.h"
 #include "Tree.h"
 
+/// <summary>
+/// Summary for Constructor
+///	
+/// PRE-CONDITION:	Must provide graphics object for drawing
+/// POST-CONDITION: Assign the graphics object and create the pen for drawing 
+/// </summary>
 Tree::Tree(Graphics^ graphics)
 {
 	this->graphics = graphics;
 
-	pen = gcnew System::Drawing::Pen(Color::Red);	
+	pen = gcnew System::Drawing::Pen(Color::Red);
+
+	rGen = gcnew Random();
 }
 
+/// <summary>
+/// Summary for Constructor
+///	
+/// PRE-CONDITION:	Must provide graphics object for drawing
+/// POST-CONDITION: Assign the graphics object and create the pen for drawing 
+/// </summary>
 void Tree::Draw(int depth, int width, int height)
 {
-	//
-	this->depth = 100 - (depth * 10);
-
-	// 
-	if(this->depth < 1)
-		this->depth = 1;
-
 	// Clear canvas
 	graphics->Clear(Color::White);
 
-	draw(width / 2, height, height / 4, 90);
+	leftOffset = rGen->Next(30) + 5;
+	rightOffset = rGen->Next(50) + 5;
+
+	draw(depth, width / 2, height, height / 4, 90);
 }
 
-void Tree::draw(double x, double y, double length, double angle)
-{	
-	// Convert to radians;
-	double radiansAngle = angle * 0.01745;
-
-	if(length > depth)
+/// <summary>
+/// Summary for Constructor
+///	
+/// PRE-CONDITION:	Must provide graphics object for drawing
+/// POST-CONDITION: Assign the graphics object and create the pen for drawing 
+/// </summary>
+void Tree::draw(int depth, int x, int y, int length, int angle)
+{		
+	if(depth >= 0)
 	{
-		double x1 = x + (length * Math::Cos(radiansAngle));
-		double y1 = y - (length * Math::Sin(radiansAngle));
+		// Convert to radians;
+		double radiansAngle = angle * 0.01745;
 
-		graphics->DrawLine(pen, (float)x, (float)y, (float)x1, (float)y1);
+		// End points
+		int x1 = (int) x + (length * Math::Cos(radiansAngle));
+		int y1 = (int) y - (length * Math::Sin(radiansAngle));
 
-		draw(x1, y1,length * 0.75, angle + 30);
-		draw(x1, y1,length * 0.66, angle - 50);		
+		// Draw line
+		graphics->DrawLine(pen, x, y, x1, y1);
+		
+		// Recursive call
+		draw(depth - 1, x1, y1, length * 0.75, angle + leftOffset);
+		draw(depth - 1, x1, y1, length * 0.66, angle - rightOffset);		
 	}
 }

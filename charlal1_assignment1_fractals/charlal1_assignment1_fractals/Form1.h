@@ -14,6 +14,8 @@ namespace charlal1_assignment1_fractals {
 	using namespace System::Data;
 	using namespace System::Drawing;
 
+	delegate void Fractal(int depth, int width, int height);
+
 	/// <summary>
 	/// Summary for Form1
 	///
@@ -45,24 +47,26 @@ namespace charlal1_assignment1_fractals {
 				delete components;
 			}
 		}
+
 	private: System::Windows::Forms::NumericUpDown^  nUpDownDepth;
-	protected: 
+
 	private: System::Windows::Forms::GroupBox^  gbDepth;
 	private: System::Windows::Forms::GroupBox^  gbPattern;
+	
+	private: System::Windows::Forms::Panel^  pDisplay;
+	
+	private: System::Windows::Forms::Button^  bTree;	
+	private: System::Windows::Forms::Button^  bKoch;
+	private: System::Windows::Forms::Button^  bCarpet;
+	private: System::Windows::Forms::Button^  bDragon;
 	private: System::Windows::Forms::Button^  bTriangle;
 
-	private: System::Windows::Forms::Panel^  pDisplay;
+	private: Graphics^ canvas;
+
 	private: SierPinski^ s;
 	private: Tree^ t;
 	private: Koch^ k;
 	private: Dragon^ d;
-
-	private: System::Windows::Forms::Button^  bTree;
-	private: Graphics^ canvas;
-	private: System::Windows::Forms::Button^  bKoch;
-	private: System::Windows::Forms::Button^  bCarpet;
-
-	private: System::Windows::Forms::Button^  bDragon;
 
 	private:
 		/// <summary>
@@ -130,7 +134,7 @@ namespace charlal1_assignment1_fractals {
 			this->gbPattern->Size = System::Drawing::Size(132, 284);
 			this->gbPattern->TabIndex = 2;
 			this->gbPattern->TabStop = false;
-			this->gbPattern->Text = L"Fractal Pattern";
+			this->gbPattern->Text = L"Pattern";
 			// 
 			// bDragon
 			// 
@@ -140,7 +144,7 @@ namespace charlal1_assignment1_fractals {
 			this->bDragon->TabIndex = 5;
 			this->bDragon->Text = L"Dragon";
 			this->bDragon->UseVisualStyleBackColor = true;
-			this->bDragon->Click += gcnew System::EventHandler(this, &Form1::bDragon_Click);
+			this->bDragon->Click += gcnew System::EventHandler(this, &Form1::b_Click);
 			// 
 			// bCarpet
 			// 
@@ -150,7 +154,7 @@ namespace charlal1_assignment1_fractals {
 			this->bCarpet->TabIndex = 3;
 			this->bCarpet->Text = L"Carpet";
 			this->bCarpet->UseVisualStyleBackColor = true;
-			this->bCarpet->Click += gcnew System::EventHandler(this, &Form1::bCarpet_Click);
+			this->bCarpet->Click += gcnew System::EventHandler(this, &Form1::b_Click);
 			// 
 			// bKoch
 			// 
@@ -160,7 +164,7 @@ namespace charlal1_assignment1_fractals {
 			this->bKoch->TabIndex = 2;
 			this->bKoch->Text = L"Koch";
 			this->bKoch->UseVisualStyleBackColor = true;
-			this->bKoch->Click += gcnew System::EventHandler(this, &Form1::bKoch_Click);
+			this->bKoch->Click += gcnew System::EventHandler(this, &Form1::b_Click);
 			// 
 			// bTree
 			// 
@@ -170,7 +174,7 @@ namespace charlal1_assignment1_fractals {
 			this->bTree->TabIndex = 1;
 			this->bTree->Text = L"Tree";
 			this->bTree->UseVisualStyleBackColor = true;
-			this->bTree->Click += gcnew System::EventHandler(this, &Form1::bTree_Click);
+			this->bTree->Click += gcnew System::EventHandler(this, &Form1::b_Click);
 			// 
 			// bTriangle
 			// 
@@ -180,7 +184,7 @@ namespace charlal1_assignment1_fractals {
 			this->bTriangle->TabIndex = 0;
 			this->bTriangle->Text = L"Triangle";
 			this->bTriangle->UseVisualStyleBackColor = true;
-			this->bTriangle->Click += gcnew System::EventHandler(this, &Form1::bSierpinski_Click);
+			this->bTriangle->Click += gcnew System::EventHandler(this, &Form1::b_Click);
 			// 
 			// pDisplay
 			// 
@@ -209,30 +213,45 @@ namespace charlal1_assignment1_fractals {
 
 		}
 #pragma endregion
-private: System::Void bSierpinski_Click(System::Object^  sender, System::EventArgs^  e) {
-			 //
-			 s->DrawTriangle((int)nUpDownDepth->Value, pDisplay->Width, pDisplay->Height);
-		 }
+
 private: System::Void Form1_Load(System::Object^  sender, System::EventArgs^  e) {
+			 
+			 // Get the drawing canvas
 			 canvas = pDisplay->CreateGraphics();
 
+			 // Instantiate fractals
 			 s = gcnew SierPinski(canvas);
 			 t = gcnew Tree(canvas);
 			 k = gcnew Koch(canvas);
 			 d = gcnew Dragon(canvas);
 		 }
-private: System::Void bTree_Click(System::Object^  sender, System::EventArgs^  e) {
-			 //
-			 t->Draw((int)nUpDownDepth->Value, pDisplay->Width, pDisplay->Height);
-		 }
-private: System::Void bKoch_Click(System::Object^  sender, System::EventArgs^  e) {
-			 k->Draw((int)nUpDownDepth->Value, pDisplay->Width, pDisplay->Height);
-		 }
-private: System::Void bCarpet_Click(System::Object^  sender, System::EventArgs^  e) {
-			 s->DrawCarpet((int)nUpDownDepth->Value, pDisplay->Width, pDisplay->Height);
-		 }
-private: System::Void bDragon_Click(System::Object^  sender, System::EventArgs^  e) {
-			 d->Draw((int)nUpDownDepth->Value, pDisplay->Width, pDisplay->Height);
+
+private: System::Void b_Click(System::Object^  sender, System::EventArgs^  e) {
+
+			 // Get form button
+			 Button^ b = safe_cast<Button^>(sender);
+
+			 // Declare delgate instance
+			 Fractal^ f;
+			 
+			 // Assign to delegate
+			 if(b->Name->Equals("bTriangle"))
+				f = gcnew Fractal(s, &SierPinski::DrawTriangle);
+
+			 if(b->Name->Equals("bCarpet"))
+				f = gcnew Fractal(s, &SierPinski::DrawCarpet);
+
+			 if(b->Name->Equals("bTree"))
+				f = gcnew Fractal(t, &Tree::Draw);
+			 
+			 if(b->Name->Equals("bDragon"))
+				f = gcnew Fractal(d, &Dragon::Draw);
+
+			 if(b->Name->Equals("bKoch"))
+				f = gcnew Fractal(k, &Koch::Draw);
+			 
+			 // Invoke delegate
+			 f->Invoke(safe_cast<int>(nUpDownDepth->Value), pDisplay->Width, pDisplay->Height);
 		 }
 };
 }

@@ -7,15 +7,9 @@ ref class Koch
 {
 private:
 	Pen^ redPen;
-	Pen^ whitePen;
 	Graphics^ graphics;
-	int depth;
 
-	int width;
-	int height;
-	Rectangle r;
-
-	void draw(int x1, int y1, int x5, int y5, int n);
+	void draw(int depth, int x1, int y1, int x5, int y5);
 
 public:
 	Koch(Graphics^ graphics);

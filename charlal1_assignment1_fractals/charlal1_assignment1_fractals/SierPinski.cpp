@@ -1,6 +1,12 @@
 #include "StdAfx.h"
 #include "SierPinski.h"
 
+/// <summary>
+/// Summary for Constructor
+///	
+/// PRE-CONDITION:	Must provide graphics object for drawing
+/// POST-CONDITION: Assign the graphics object and create the pen for drawing 
+/// </summary>
 SierPinski::SierPinski(Graphics^ graphics)
 {
 	this->graphics = graphics;
@@ -8,115 +14,114 @@ SierPinski::SierPinski(Graphics^ graphics)
 	pen = gcnew System::Drawing::Pen(Color::Red);
 }
 
+/// <summary>
+/// Summary for DrawTriangle
+///	
+/// PRE-CONDITION:	Must provide depth, the start point and end point of line
+/// POST-CONDITION: When depth is 0, a line is drawn to the screen
+///
+/// </summary>
 void SierPinski::DrawTriangle(int depth, int width, int height)
-{		
-	this->depth = depth;
-	drawTriangle((float)10, (float)height - 10, (float)width - 10, (float)height - 10, (float)width / 2, (float)10);
-}
-
-void SierPinski::drawTriangle(float x1, float y1, float x2, float y2, float x3, float y3)
-{	
+{
 	// Clear canvas
 	graphics->Clear(Color::White);
 
-	//Draw the 3 sides of the triangle as black lines
-	graphics->DrawLine(pen, x1, y1, x2, y2);
-	graphics->DrawLine(pen, x1, y1, x3, y3);
-	graphics->DrawLine(pen, x2, y2, x3, y3);
-	
-	//Call the recursive function that'll draw all the rest. The 3 corners of it are always the centers of sides, so they're averages
-    subTriangle
-    (
-        1, //This represents the first recursion
-        (x1 + x2) / 2, //x coordinate of first corner
-        (y1 + y2) / 2, //y coordinate of first corner
-        (x1 + x3) / 2, //x coordinate of second corner
-        (y1 + y3) / 2, //y coordinate of second corner
-        (x2 + x3) / 2, //x coordinate of third corner
-        (y2 + y3) / 2  //y coordinate of third corner
-    );
+	// Triangle endpoints
+	int triangleHeight = (int) Math::Round(512 * Math::Sqrt(3.0) / 2.0);
+
+    Point p1 = Point(0, triangleHeight);
+    Point p2 = Point(512 / 2, 0);
+    Point p3 = Point(512, triangleHeight);
+
+    drawTriangle(depth, p1, p2, p3);
 }
 
-
-//The recursive function that'll draw all the upside down triangles
-void SierPinski::subTriangle(int n, float x1, float y1, float x2, float y2, float x3, float y3)
+/// <summary>
+/// Summary for drawTriangle
+///	
+/// PRE-CONDITION:	Must provide depth, the start point and end point of line
+/// POST-CONDITION: When depth is 0, a line is drawn to the screen
+///
+/// </summary>
+void SierPinski::drawTriangle(int depth, Point p1, Point p2, Point p3)
 {
-    //Draw the 3 sides as black lines
-	graphics->DrawLine(pen, x1, y1, x2, y2);
-	graphics->DrawLine(pen, x1, y1, x3, y3);
-	graphics->DrawLine(pen, x2, y2, x3, y3);        
-    //
-    //Calls itself 3 times with new corners, but only if the current number of recursions is smaller than the maximum depth
-    if(n < depth)
-    {
-        //Smaller triangle 1
-        subTriangle
-        (
-            n+1, //Number of recursions for the next call increased with 1
-            (x1 + x2) / 2 + (x2 - x3) / 2, //x coordinate of first corner
-            (y1 + y2) / 2 + (y2 - y3) / 2, //y coordinate of first corner
-            (x1 + x2) / 2 + (x1 - x3) / 2, //x coordinate of second corner
-            (y1 + y2) / 2 + (y1 - y3) / 2, //y coordinate of second corner
-            (x1 + x2) / 2, //x coordinate of third corner
-            (y1 + y2) / 2  //y coordinate of third corner
-        );
-        //Smaller triangle 2
-        subTriangle
-        (
-            n+1, //Number of recursions for the next call increased with 1
-            (x3 + x2) / 2 + (x2 - x1) / 2, //x coordinate of first corner
-            (y3 + y2) / 2 + (y2 - y1) / 2, //y coordinate of first corner
-            (x3 + x2) / 2 + (x3 - x1) / 2, //x coordinate of second corner
-            (y3 + y2) / 2 + (y3 - y1) / 2, //y coordinate of second corner
-            (x3 + x2) / 2, //x coordinate of third corner
-            (y3 + y2) / 2  //y coordinate of third corner
-        );
-        //Smaller triangle 3
-        subTriangle
-        (
-            n+1, //Number of recursions for the next call increased with 1
-            (x1 + x3) / 2 + (x3 - x2) / 2, //x coordinate of first corner
-            (y1 + y3) / 2 + (y3 - y2) / 2, //y coordinate of first corner
-            (x1 + x3) / 2 + (x1 - x2) / 2, //x coordinate of second corner
-            (y1 + y3) / 2 + (y1 - y2) / 2, //y coordinate of second corner
-            (x1 + x3) / 2, //x coordinate of third corner
-            (y1 + y3) / 2  //y coordinate of third corner        
-        );                
-    }             
+	if (depth <= 0) 
+	{		
+		graphics->DrawPolygon(pen, gcnew array<Point>{ p1, p2, p3} );
+    }
+	else
+	{
+        // recursive case, split into 3 triangles
+        Point p4 = midPoint(p1, p2);
+        Point p5 = midPoint(p2, p3);
+        Point p6 = midPoint(p1, p3);
+
+        // recurse on 3 triangular areas
+        drawTriangle(depth - 1, p1, p4, p6);
+        drawTriangle(depth - 1, p4, p2, p5);
+        drawTriangle(depth - 1, p6, p5, p3);
+    }
 }
 
+/// <summary>
+/// Summary for midPoint
+///	
+/// PRE-CONDITION:	Must provide two points
+/// POST-CONDITION: returns the midpoint of p1 and p2
+///
+/// </summary>
+Point SierPinski::midPoint(Point p1, Point p2) 
+{
+	return Point((p1.X + p2.X) / 2, (p1.Y + p2.Y) / 2);
+}
 
-
+/// <summary>
+/// Summary for DrawCarpet
+///	
+/// PRE-CONDITION:	Must provide depth, the start point and end point of line
+/// POST-CONDITION: When depth is 0, a line is drawn to the screen
+///
+/// </summary>
 void SierPinski::DrawCarpet(int depth, int width, int height)
-{		
-	this->depth = depth;
-
+{
 	// Clear canvas
 	graphics->Clear(Color::White);
 
-	drawCarpet(0, 0, 0, width);
+	// Recursive call
+	drawCarpet(depth, 0, 0, width);
 }
 
-void SierPinski::drawCarpet(int n, int x, int y, int size)
+/// <summary>
+/// Summary for draw
+///	
+/// PRE-CONDITION:	Must provide depth, the start point and end point of line
+/// POST-CONDITION: When depth is 0, a line is drawn to the screen
+///
+/// </summary>
+void SierPinski::drawCarpet(int depth, int x, int y, int size)
 {
-        if (n >= depth) 
-			return;
-		
-		// Color center square
+	// Draw when depth is 0
+	if (depth >= 0)
+	{		
+		// Calc size of squares
 		int subSize = size / 3;
+
+		// Draw the square
 		Rectangle rect = Rectangle(x + subSize, y + subSize, subSize, subSize);
 		graphics->FillRectangle(Brushes::Red, rect);
 
-		drawCarpet(n + 1, x, y, subSize);
-		drawCarpet(n + 1, x + subSize, y, subSize);
-		drawCarpet(n + 1, x + 2 * subSize, y, subSize);
+		// Draw the top row
+		drawCarpet(depth - 1, x, y, subSize);
+		drawCarpet(depth - 1, x + subSize, y, subSize);
+		drawCarpet(depth - 1, x + 2 * subSize, y, subSize);
 
-		// middle row 
-		drawCarpet(n + 1, x, ( y + subSize ), subSize ); 
-		drawCarpet(n + 1, ( x + 2 * subSize ), ( y + subSize ), subSize );
+		// Draw the middle row 
+		drawCarpet(depth - 1, x, ( y + subSize ), subSize ); 
+		drawCarpet(depth - 1, ( x + 2 * subSize ), ( y + subSize ), subSize );
 
-		// bottom row 
-		drawCarpet(n + 1, x, ( y + 2 * subSize ), subSize); 
-		drawCarpet(n + 1, ( x + subSize ), ( y + 2 * subSize ), subSize ); 
-		drawCarpet(n + 1, ( x + 2 * subSize ), ( y + 2 * subSize ), subSize );
+		// Draw the bottom row 
+		drawCarpet(depth - 1, x, ( y + 2 * subSize ), subSize); 
+		drawCarpet(depth - 1, ( x + subSize ), ( y + 2 * subSize ), subSize ); 
+		drawCarpet(depth - 1, ( x + 2 * subSize ), ( y + 2 * subSize ), subSize );
+	}
 }

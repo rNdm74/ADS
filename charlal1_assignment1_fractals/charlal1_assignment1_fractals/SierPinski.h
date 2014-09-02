@@ -1,6 +1,6 @@
 #pragma once
 
-using namespace System::Windows::Forms;
+using namespace System;
 using namespace System::Drawing;
 
 ref class SierPinski
@@ -9,15 +9,14 @@ private:
 	Pen^ pen;
 	Graphics^ graphics;
 
-	//depth is the number of recursive steps
-	int depth;
+	void drawTriangle(int depth, Point p1, Point p2, Point p3);
+	Point midPoint(Point p1, Point p2);
+
+	void drawCarpet(int depth, int x, int y, int size);
+
 public:
 	SierPinski(Graphics^ graphics);
+
 	void DrawTriangle(int depth, int width, int height);
 	void DrawCarpet(int depth, int width, int height);
-private:
-	void drawTriangle(float x1, float y1, float x2, float y2, float x3, float y3);
-	void subTriangle(int n, float x1, float y1, float x2, float y2, float x3, float y3);
-	void drawCarpet(int n, int x, int y, int size);
-
 };
