@@ -97,7 +97,7 @@ namespace charlal1_assignment1_fractals {
 			this->nUpDownDepth->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->nUpDownDepth->Location = System::Drawing::Point(6, 25);
-			this->nUpDownDepth->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) {9, 0, 0, 0});
+			this->nUpDownDepth->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) {20, 0, 0, 0});
 			this->nUpDownDepth->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) {1, 0, 0, 0});
 			this->nUpDownDepth->Name = L"nUpDownDepth";
 			this->nUpDownDepth->Size = System::Drawing::Size(120, 26);
