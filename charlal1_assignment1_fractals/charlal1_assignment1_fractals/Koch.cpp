@@ -41,7 +41,8 @@ void Koch::Draw(int depth, int width, int height)
 /// Summary for draw
 ///	
 /// PRE-CONDITION:	Must provide depth, the start point and end point of line
-/// POST-CONDITION: When depth is 0, a line is drawn to the screen
+/// POST-CONDITION: When depth is 0, a line is drawn to the screen or
+///					Keep recursing to draw the four lines for the snow flake
 ///
 /// </summary>
 void Koch::draw(int depth, int x1, int y1, int x5, int y5)

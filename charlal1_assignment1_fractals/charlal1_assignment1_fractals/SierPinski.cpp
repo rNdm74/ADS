@@ -17,9 +17,10 @@ SierPinski::SierPinski(Graphics^ graphics)
 /// <summary>
 /// Summary for DrawTriangle
 ///	
-/// PRE-CONDITION:	Must provide depth, the start point and end point of line
-/// POST-CONDITION: When depth is 0, a line is drawn to the screen
-///
+/// PRE-CONDITION:	Must provide depth canvas width and height
+/// POST-CONDITION: The canvas is cleared for drawing
+///					Calculate the 3 points for triangle
+///					The recursive draw call is made
 /// </summary>
 void SierPinski::DrawTriangle(int depth, int width, int height)
 {
@@ -39,24 +40,26 @@ void SierPinski::DrawTriangle(int depth, int width, int height)
 /// <summary>
 /// Summary for drawTriangle
 ///	
-/// PRE-CONDITION:	Must provide depth, the start point and end point of line
-/// POST-CONDITION: When depth is 0, a line is drawn to the screen
+/// PRE-CONDITION:	Must provide depth, the three points for triangles
+/// POST-CONDITION: Two cases either, a line is drawn from three points or
+///					Recurse to draw 3 triangles within the main triangle
 ///
 /// </summary>
 void SierPinski::drawTriangle(int depth, Point p1, Point p2, Point p3)
 {
+	// Basecase
 	if (depth <= 0) 
 	{		
 		graphics->DrawPolygon(pen, gcnew array<Point>{ p1, p2, p3} );
     }
 	else
 	{
-        // recursive case, split into 3 triangles
+        // Split into 3 triangles
         Point p4 = midPoint(p1, p2);
         Point p5 = midPoint(p2, p3);
         Point p6 = midPoint(p1, p3);
 
-        // recurse on 3 triangular areas
+        // Recurse on 3 triangular areas
         drawTriangle(depth - 1, p1, p4, p6);
         drawTriangle(depth - 1, p4, p2, p5);
         drawTriangle(depth - 1, p6, p5, p3);
@@ -78,9 +81,9 @@ Point SierPinski::midPoint(Point p1, Point p2)
 /// <summary>
 /// Summary for DrawCarpet
 ///	
-/// PRE-CONDITION:	Must provide depth, the start point and end point of line
-/// POST-CONDITION: When depth is 0, a line is drawn to the screen
-///
+/// PRE-CONDITION:	Must provide depth canvas width and height
+/// POST-CONDITION: The canvas is cleared for drawing
+///					The recursive draw call is made
 /// </summary>
 void SierPinski::DrawCarpet(int depth, int width, int height)
 {
@@ -94,8 +97,9 @@ void SierPinski::DrawCarpet(int depth, int width, int height)
 /// <summary>
 /// Summary for draw
 ///	
-/// PRE-CONDITION:	Must provide depth, the start point and end point of line
-/// POST-CONDITION: When depth is 0, a line is drawn to the screen
+/// PRE-CONDITION:	Must provide depth, the x,y location and the size of the square
+/// POST-CONDITION: When depth is greater than 0, a square is drawn to the screen
+///					Then recursive calls are made to draw top, middle and bottom rows around center square
 ///
 /// </summary>
 void SierPinski::drawCarpet(int depth, int x, int y, int size)
