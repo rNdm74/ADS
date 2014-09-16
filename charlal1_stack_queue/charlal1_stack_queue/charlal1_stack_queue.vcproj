@@ -252,6 +252,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\TPriorityQueue.h"
+				>
+			</File>
+			<File
 				RelativePath=".\TQueue.h"
 				>
 			</File>
